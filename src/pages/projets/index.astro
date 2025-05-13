@@ -1,0 +1,93 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import '@phosphor-icons/web/regular/style.css';
+
+const projects = [
+  {
+    title: "Community Deforestation Tracker",
+    description: "Projet de détection de déforestation dans le Bassin du Congo, utilisant l'intelligence artificielle pour surveiller et prévenir la déforestation.",
+    technologies: ["Python", "Deep Learning", "Satellite Imagery"],
+    icon: "tree",
+    link: "#",
+    githubLink: "#"
+  },
+  {
+    title: "Urban AgriTech",
+    description: "Système de pilotage d'installations agricoles urbaines avec IoT, optimisant la production agricole en milieu urbain.",
+    technologies: ["IoT", "Géospatial", "Data Analysis"],
+    icon: "leaf",
+    link: "#",
+    githubLink: "#"
+  },
+  {
+    title: "Drone Mapping Solution",
+    description: "Application de cartographie et d'analyse géospatiale utilisant des données de drone pour l'agriculture de précision.",
+    technologies: ["Drone", "GIS", "Python"],
+    icon: "drone",
+    link: "#",
+    githubLink: "#"
+  },
+  {
+    title: "Climate Data Dashboard",
+    description: "Tableau de bord interactif pour visualiser et analyser les données climatiques et environnementales.",
+    technologies: ["Data Visualization", "React", "Climate Data"],
+    icon: "chart-line",
+    link: "#",
+    githubLink: "#"
+  }
+];
+---
+
+<MainLayout title="Projets - Dzudzogbe Prince Armand Koumi">
+  <main class="container mx-auto px-4 py-16 max-w-4xl">
+    <section>
+      <h1 class="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
+        Mes Projets
+      </h1>
+      <div class="grid md:grid-cols-2 gap-6">
+        {projects.map(project => (
+          <div class="bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors group shadow-md dark:shadow-none flex flex-col">
+            <div class="flex items-center mb-4">
+              <i class={`ph ph-${project.icon} w-10 h-10 text-green-500 mr-4`}></i>
+              <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">{project.title}</h2>
+            </div>
+            <p class="text-neutral-600 dark:text-neutral-300 mb-4 flex-grow">{project.description}</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              {project.technologies.map(tech => (
+                <span class="bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 px-2 py-1 rounded-full text-sm">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div class="flex justify-between mt-auto">
+              <a href={project.link} class="bg-green-500 text-white px-3 py-2 rounded-lg text-sm hover:bg-green-600 transition">
+                Voir le projet
+              </a>
+              <a href={project.githubLink} target="_blank" class="bg-neutral-700 text-white px-3 py-2 rounded-lg text-sm hover:bg-neutral-800 transition flex items-center">
+                <i class="ph ph-github-logo mr-2"></i>GitHub
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+</MainLayout>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    const projects = document.querySelectorAll('section > div > div');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    projects.forEach(project => {
+      project.classList.add('opacity-0', 'transition-all', 'duration-700');
+      observer.observe(project);
+    });
+  });
+</script>

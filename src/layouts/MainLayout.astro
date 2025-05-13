@@ -1,0 +1,111 @@
+---
+import '@phosphor-icons/web/regular/style.css';
+import Navigation from '../components/Navigation.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Portfolio de Dzudzogbe Prince Armand Koumi' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.0.3/src/regular/style.css" rel="stylesheet">
+  </head>
+  <body class="bg-neutral-50 text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50 font-sans antialiased selection:bg-green-500 selection:text-white transition-colors duration-300">
+    <div id="app" class="min-h-screen relative pb-16">
+      <button id="theme-toggle" class="fixed top-4 right-4 z-50 bg-neutral-200 dark:bg-neutral-800 p-2 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors">
+        <i id="theme-icon" class="ph ph-moon-stars dark:ph-sun text-xl"></i>
+      </button>
+      <slot />
+      <Navigation />
+    </div>
+    <script is:inline>
+      function setTheme(theme) {
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.body.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.body.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        }
+        updateThemeIcon();
+      }
+
+      function updateThemeIcon() {
+        const themeIcon = document.getElementById('theme-icon');
+        if (document.documentElement.classList.contains('dark')) {
+          themeIcon.classList.remove('ph-moon-stars');
+          themeIcon.classList.add('ph-sun');
+        } else {
+          themeIcon.classList.remove('ph-sun');
+          themeIcon.classList.add('ph-moon-stars');
+        }
+      }
+
+      function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && prefersDarkMode)) {
+          setTheme('dark');
+        } else {
+          setTheme('light');
+        }
+      }
+
+      document.addEventListener('astro:page-load', () => {
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        initTheme();
+
+        themeToggle.addEventListener('click', () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          setTheme(isDark ? 'light' : 'dark');
+        });
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (!localStorage.getItem('theme')) {
+            setTheme(e.matches ? 'dark' : 'light');
+          }
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+          section.classList.add('opacity-0', 'transition-all', 'duration-700');
+          observer.observe(section);
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 1;
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+</style>

@@ -1,0 +1,159 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import '@phosphor-icons/web/regular/style.css';
+
+const contactMethods = [
+  {
+    icon: 'envelope-simple',
+    type: 'Email',
+    value: 'koumiprince@gmail.com',
+    link: 'mailto:koumiprince@gmail.com',
+    color: 'text-green-500'
+  },
+  {
+    icon: 'phone',
+    type: 'Téléphone',
+    value: '+33 6 02 89 23 54',
+    link: 'tel:+33602892354',
+    color: 'text-blue-500'
+  }
+];
+
+const socialLinks = [
+  {
+    icon: 'linkedin-logo',
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/dzudzogbe-prince-armand-koumi-',
+    color: 'text-blue-600'
+  },
+  {
+    icon: 'tiktok-logo',
+    name: 'TikTok',
+    url: 'https://www.tiktok.com/@dzudzogbeprince',
+    color: 'text-black dark:text-white'
+  },
+  {
+    icon: 'youtube-logo',
+    name: 'YouTube',
+    url: 'https://www.youtube.com/@dzudzogbeprince',
+    color: 'text-red-600'
+  }
+];
+---
+
+<MainLayout title="Contact - Dzudzogbe Prince Armand Koumi">
+  <main class="container mx-auto px-4 py-16 max-w-4xl space-y-12">
+    <section class="text-center">
+      <h1 class="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
+        Contactez-moi
+      </h1>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 shadow-md dark:shadow-none">
+          <h2 class="text-2xl font-semibold mb-6 text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-800 pb-3">
+            <i class="ph ph-info mr-2 text-blue-500"></i>Informations de contact
+          </h2>
+          <div class="space-y-4">
+            {contactMethods.map(method => (
+              <div class="flex items-center space-x-4">
+                <i class={`ph ph-${method.icon} text-3xl ${method.color}`}></i>
+                <div>
+                  <p class="text-neutral-600 dark:text-neutral-300">{method.type}</p>
+                  <a 
+                    href={method.link} 
+                    class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 hover:text-blue-600 dark:hover:text-blue-400 transition"
+                  >
+                    {method.value}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div class="bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 shadow-md dark:shadow-none">
+          <h2 class="text-2xl font-semibold mb-6 text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-800 pb-3">
+            <i class="ph ph-share-network mr-2 text-green-500"></i>Réseaux sociaux
+          </h2>
+          <div class="grid grid-cols-3 gap-4">
+            {socialLinks.map(social => (
+              <a 
+                href={social.url} 
+                target="_blank" 
+                class={`flex flex-col items-center ${social.color} hover:opacity-80 transition`}
+              >
+                <i class={`ph ph-${social.icon} text-4xl mb-2`}></i>
+                <span class="text-sm text-neutral-600 dark:text-neutral-300">{social.name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-12 bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 shadow-md dark:shadow-none">
+        <h2 class="text-2xl font-semibold mb-6 text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-800 pb-3 flex items-center">
+          <i class="ph ph-paper-plane-tilt mr-3 text-purple-500 text-3xl"></i>Envoyez-moi un message
+        </h2>
+        <form id="contact-form" class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="relative">
+              <label for="name" class="absolute -top-2 left-3 bg-neutral-50 dark:bg-neutral-900 px-1 text-xs text-neutral-500 dark:text-neutral-400">Nom complet</label>
+              <input 
+                id="name"
+                type="text" 
+                required
+                placeholder="Votre nom"
+                class="w-full p-3 pt-5 bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+              />
+            </div>
+            <div class="relative">
+              <label for="email" class="absolute -top-2 left-3 bg-neutral-50 dark:bg-neutral-900 px-1 text-xs text-neutral-500 dark:text-neutral-400">Adresse email</label>
+              <input 
+                id="email"
+                type="email" 
+                required
+                placeholder="vous@exemple.com"
+                class="w-full p-3 pt-5 bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+              />
+            </div>
+          </div>
+          <div class="relative">
+            <label for="message" class="absolute -top-2 left-3 bg-neutral-50 dark:bg-neutral-900 px-1 text-xs text-neutral-500 dark:text-neutral-400">Votre message</label>
+            <textarea 
+              id="message"
+              required
+              placeholder="Écrivez votre message ici..."
+              rows="5" 
+              class="w-full p-3 pt-5 bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition resize-none"
+            ></textarea>
+          </div>
+          <button 
+            type="submit" 
+            class="w-full bg-gradient-to-r from-green-500 to-blue-500 text-white py-3 rounded-lg hover:from-green-600 hover:to-blue-600 transition flex items-center justify-center space-x-2 group"
+          >
+            <i class="ph ph-paper-plane-tilt text-xl group-hover:animate-bounce"></i>
+            <span>Envoyer le message</span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+</MainLayout>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    const sections = document.querySelectorAll('section > div');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      section.classList.add('opacity-0', 'transition-all', 'duration-700');
+      observer.observe(section);
+    });
+  });
+</script>

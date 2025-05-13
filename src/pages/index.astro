@@ -1,0 +1,154 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import '@phosphor-icons/web/regular/style.css';
+---
+
+<MainLayout title="Dzudzogbe Prince Armand Koumi - Data Scientist & Agro-économiste">
+  <main class="container mx-auto px-4 py-16 max-w-4xl space-y-12">
+    {/* Header Section */}
+    <section class="text-center">
+      <div class="flex flex-col items-center mb-8">
+        <img 
+          src="/images/armand-profile.jpg" 
+          alt="Dzudzogbe Prince Armand Koumi" 
+          class="w-48 h-48 object-cover rounded-full border-4 border-green-500 mb-6 shadow-lg"
+        />
+        <h1 class="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
+          Dzudzogbe Prince Armand Koumi
+        </h1>
+        <p class="text-xl text-neutral-300 mb-4">
+          Agricultural Data Scientist | Agro-économiste | Drone pilot (A1/A2/A3)
+        </p>
+      </div>
+      <div class="flex justify-center items-center space-x-4 text-neutral-500 dark:text-neutral-400 mb-8">
+        <a href="mailto:koumiprince@gmail.com" class="hover:text-neutral-900 dark:hover:text-white transition flex items-center">
+          <i class="ph ph-envelope mr-2"></i> koumiprince@gmail.com
+        </a>
+        <span>•</span>
+        <a href="tel:+33602892354" class="hover:text-neutral-900 dark:hover:text-white transition flex items-center">
+          <i class="ph ph-phone mr-2"></i> +33 6 02 89 23 54
+        </a>
+        <span>•</span>
+        <a href="https://www.linkedin.com/in/dzudzogbe-prince-armand-koumi" target="_blank" class="hover:text-neutral-900 dark:hover:text-white transition flex items-center">
+          <i class="ph ph-linkedin-logo mr-2"></i> LinkedIn
+        </a>
+        <span>•</span>
+        <a href="https://www.tiktok.com/@dzudzogbeprince" target="_blank" class="hover:text-neutral-900 dark:hover:text-white transition flex items-center">
+          <i class="ph ph-tiktok-logo mr-2"></i> TikTok
+        </a>
+        <span>•</span>
+        <a href="https://www.youtube.com/@dzudzogbeprince" target="_blank" class="hover:text-neutral-900 dark:hover:text-white transition flex items-center">
+          <i class="ph ph-youtube-logo mr-2"></i> YouTube
+        </a>
+      </div>
+      
+      <div class="flex justify-center space-x-4">
+        <a href="/projets" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition flex items-center">
+           Mes Projets
+        </a>
+        <a href="/certifications" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition flex items-center">
+          Certifications
+        </a>
+      </div>
+    </section>
+
+    {/* About Section */}
+    <section>
+      <h2 class="text-3xl font-semibold mb-6 text-neutral-100 border-b border-neutral-800 pb-2">À propos</h2>
+      <p class="text-neutral-300 leading-relaxed">
+        Passionné par l'agriculture de précision et l'analyse de données environnementales, je suis actuellement en dernière année de Master en Gestion des Données Agricoles et Alimentaires à UniLaSalle Rouen. 
+        J'allie expertise en machine learning, géospatiale et IoT pour concevoir des solutions durables et innovantes au service de l'agro-écosystème. 
+        Curieux, autonome et doté d'un sens aigu de la rigueur, j'aime relever les défis multi-disciplinaires et travailler en équipe pour transformer les données en actions concrètes.
+      </p>
+    </section>
+
+    {/* Specialization Domains */}
+    <section>
+      <h2 class="text-3xl font-semibold mb-6 text-neutral-100 border-b border-neutral-800 pb-2">Domaines de spécialisation</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {[
+          "Data Science & Machine Learning : Modélisation prédictive, sélection et tuning de modèles",
+          "Analyse géospatiale & SIG : QGIS, Agisoft Metashape, GeoPandas, imagerie satellite",
+          "Agriculture de précision & IoT : Déploiement de capteurs, drones, réseaux de suivi des cultures",
+          "Big Data & Data Engineering : Architectures data lakes, pipelines ETL",
+          "Agro-économie & Développement rural : Études socio-économiques, stratégies d'adaptation"
+        ].map(domain => (
+          <div class="bg-neutral-900 rounded-lg p-4 text-neutral-300 hover:bg-neutral-800 transition-colors">
+            {domain}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Technical Skills */}
+    <section>
+      <h2 class="text-3xl font-semibold mb-6 text-neutral-100 border-b border-neutral-800 pb-2">Compétences techniques</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div>
+          <h3 class="text-xl font-semibold text-neutral-200 mb-3">Langages & Outils</h3>
+          <ul class="space-y-2 text-neutral-300">
+            {['Python', 'R', 'SQL', 'VBA', 'Excel', 'Power BI', 'Git', 'Docker'].map(skill => (
+              <li>{skill}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-neutral-200 mb-3">Plateformes</h3>
+          <ul class="space-y-2 text-neutral-300">
+            {['scikit-learn', 'TensorFlow', 'Dask', 'QGIS', 'AWS', 'Azure'].map(platform => (
+              <li>{platform}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-neutral-200 mb-3">Méthodes</h3>
+          <ul class="space-y-2 text-neutral-300">
+            {['Feature engineering', 'Cross-validation', 'SIG', 'MLOps', 'Agriculture de précision'].map(method => (
+              <li>{method}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    {/* Key Projects */}
+    <section>
+      <h2 class="text-3xl font-semibold mb-6 text-neutral-100 border-b border-neutral-800 pb-2">Projets & expériences clés</h2>
+      {[
+        {
+          title: "Ingénieur Machine Learning",
+          company: "ENS-Paris PSL",
+          period: "avril 2025 – oct. 2025",
+          description: [
+            "Collecte et agrégation de données « open source »",
+            "Sélection et validation de modèles ML pour évaluer l'impact des pratiques culturales",
+            "Développement d'algorithmes prédictifs pour anticiper les tendances agronomiques"
+          ]
+        },
+        {
+          title: "Responsable agrégation & traitement de données",
+          company: "Global Center for Risk and Innovation (GCRI)",
+          period: "déc. 2024 – mars 2025",
+          description: [
+            "Supervision de la collecte et standardisation de données environnementales",
+            "Mise en place d'une architecture data lake et protocoles de métadonnées"
+          ]
+        }
+      ].map(project => (
+        <div class="bg-neutral-900 rounded-lg p-6 mb-4">
+          <h3 class="text-xl font-semibold text-neutral-200 mb-2">{project.title}</h3>
+          <div class="flex justify-between text-neutral-400 mb-3">
+            <span>{project.company}</span>
+            <span>{project.period}</span>
+          </div>
+          <ul class="list-disc list-inside text-neutral-300 space-y-1">
+            {project.description.map(point => (
+              <li>{point}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </section>
+
+  </main>
+</MainLayout>

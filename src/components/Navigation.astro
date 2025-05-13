@@ -1,0 +1,23 @@
+---
+const navItems = [
+  { href: '/', label: 'Accueil', icon: 'house' },
+  { href: '/projets', label: 'Projets', icon: 'code' },
+  { href: '/certifications', label: 'Certifications', icon: 'medal' },
+  { href: '/competences', label: 'Compétences', icon: 'brain' },
+  { href: '/contact', label: 'Contact', icon: 'envelope-simple' }
+];
+---
+
+<nav class="fixed bottom-0 left-0 right-0 bg-neutral-100 dark:bg-neutral-900 border-t dark:border-neutral-800 z-50">
+  <div class="container mx-auto flex justify-around py-3">
+    {navItems.map(item => (
+      <a 
+        href={item.href} 
+        class="flex flex-col items-center text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+      >
+        <i class={`ph ph-${item.icon} text-2xl mb-1`}></i>
+        <span class="text-xs">{item.label}</span>
+      </a>
+    ))}
+  </div>
+</nav>
