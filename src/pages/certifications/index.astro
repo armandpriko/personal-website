@@ -431,27 +431,68 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
   });
 
   // Image Viewer Functions
+  let imageZoom = 100;
+  let imageElement = null;
+
   function openImageViewer(imageUrl, title) {
     const modal = document.getElementById('pdfModal');
     const titleElement = document.getElementById('pdfModalTitle');
     const container = document.getElementById('pdfContainer');
     
     titleElement.textContent = title;
+    imageZoom = 100; // Reset zoom
     
-    // Create image viewer
+    // Create image viewer with zoom controls
     container.innerHTML = `
-      <div class="w-full h-full relative">
-        <img src="${imageUrl}" alt="${title}" class="w-full h-full object-contain rounded-lg">
+      <div class="w-full h-full relative flex flex-col">
+        <!-- Zoom Controls -->
+        <div class="flex items-center justify-between bg-neutral-100 dark:bg-neutral-800 p-3 rounded-t-lg border-b">
+          <div class="flex items-center space-x-2">
+            <button onclick="imageZoomOut()" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors flex items-center">
+              <i class="ph ph-minus mr-1"></i>
+              Zoom -
+            </button>
+            <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300 min-w-[60px] text-center">
+              ${imageZoom}%
+            </span>
+            <button onclick="imageZoomIn()" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors flex items-center">
+              <i class="ph ph-plus mr-1"></i>
+              Zoom +
+            </button>
+            <button onclick="imageResetZoom()" class="bg-gray-600 hover:bg-gray-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors flex items-center">
+              <i class="ph ph-arrows-clockwise mr-1"></i>
+              Reset
+            </button>
+          </div>
+          <div class="text-xs text-neutral-500 dark:text-neutral-400">
+            <i class="ph ph-info mr-1"></i>
+            Utilisez les boutons pour ajuster le zoom
+          </div>
+        </div>
         
-        <!-- Overlay to prevent interaction -->
-        <div class="absolute inset-0 bg-transparent" 
-             oncontextmenu="return false;"
-             onselectstart="return false;"
-             ondragstart="return false;">
+        <!-- Image Container -->
+        <div class="flex-1 relative overflow-auto bg-neutral-50 dark:bg-neutral-900 flex items-center justify-center">
+          <img 
+            id="imageFrame"
+            src="${imageUrl}" 
+            alt="${title}" 
+            class="max-w-none transition-all duration-300 cursor-zoom-in"
+            style="width: ${imageZoom}%; height: auto;"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            ondragstart="return false;">
+          
+          <!-- Overlay to prevent interaction -->
+          <div class="absolute inset-0 bg-transparent" 
+               oncontextmenu="return false;"
+               onselectstart="return false;"
+               ondragstart="return false;">
+          </div>
         </div>
       </div>
     `;
     
+    imageElement = document.getElementById('imageFrame');
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
     
@@ -459,37 +500,103 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
     disablePDFInteractions();
   }
 
+  // Image Zoom Functions
+  function imageZoomIn() {
+    if (imageZoom < 300) {
+      imageZoom += 25;
+      updateImageZoom();
+    }
+  }
+
+  function imageZoomOut() {
+    if (imageZoom > 50) {
+      imageZoom -= 25;
+      updateImageZoom();
+    }
+  }
+
+  function imageResetZoom() {
+    imageZoom = 100;
+    updateImageZoom();
+  }
+
+  function updateImageZoom() {
+    if (imageElement) {
+      imageElement.style.width = `${imageZoom}%`;
+      
+      // Update zoom percentage display
+      const zoomDisplay = document.querySelector('.text-sm.font-medium.text-neutral-700');
+      if (zoomDisplay) {
+        zoomDisplay.textContent = `${imageZoom}%`;
+      }
+    }
+  }
+
   // PDF Viewer Functions
+  let currentZoom = 100;
+  let pdfIframe = null;
+
   function openPDFViewer(pdfUrl, title) {
     const modal = document.getElementById('pdfModal');
     const titleElement = document.getElementById('pdfModalTitle');
     const container = document.getElementById('pdfContainer');
     
     titleElement.textContent = title;
+    currentZoom = 100; // Reset zoom
     
-    // Create secure PDF viewer
+    // Create secure PDF viewer with zoom controls
     container.innerHTML = `
-      <div class="w-full h-full relative">
-        <iframe 
-          src="${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&scrollbar=0&view=FitH"
-          class="w-full h-full border-0"
-          style="pointer-events: none;"
-          oncontextmenu="return false;"
-          onselectstart="return false;"
-          ondragstart="return false;"
-          onkeydown="return false;">
-        </iframe>
+      <div class="w-full h-full relative flex flex-col">
+        <!-- Zoom Controls -->
+        <div class="flex items-center justify-between bg-neutral-100 dark:bg-neutral-800 p-3 rounded-t-lg border-b">
+          <div class="flex items-center space-x-2">
+            <button onclick="zoomOut()" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors flex items-center">
+              <i class="ph ph-minus mr-1"></i>
+              Zoom -
+            </button>
+            <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300 min-w-[60px] text-center">
+              ${currentZoom}%
+            </span>
+            <button onclick="zoomIn()" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors flex items-center">
+              <i class="ph ph-plus mr-1"></i>
+              Zoom +
+            </button>
+            <button onclick="resetZoom()" class="bg-gray-600 hover:bg-gray-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors flex items-center">
+              <i class="ph ph-arrows-clockwise mr-1"></i>
+              Reset
+            </button>
+          </div>
+          <div class="text-xs text-neutral-500 dark:text-neutral-400">
+            <i class="ph ph-info mr-1"></i>
+            Utilisez les boutons pour ajuster le zoom
+          </div>
+        </div>
         
-        <!-- Overlay to prevent interaction -->
-        <div class="absolute inset-0 bg-transparent" 
-             oncontextmenu="return false;"
-             onselectstart="return false;"
-             ondragstart="return false;"
-             onkeydown="return false;">
+        <!-- PDF Container -->
+        <div class="flex-1 relative overflow-auto">
+          <iframe 
+            id="pdfFrame"
+            src="${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&scrollbar=0&view=FitH"
+            class="border-0 transition-all duration-300"
+            style="pointer-events: none; width: ${currentZoom}%; height: ${currentZoom}%;"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            ondragstart="return false;"
+            onkeydown="return false;">
+          </iframe>
+          
+          <!-- Overlay to prevent interaction -->
+          <div class="absolute inset-0 bg-transparent" 
+               oncontextmenu="return false;"
+               onselectstart="return false;"
+               ondragstart="return false;"
+               onkeydown="return false;">
+          </div>
         </div>
       </div>
     `;
     
+    pdfIframe = document.getElementById('pdfFrame');
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
     
@@ -502,6 +609,39 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
     modal.classList.add('hidden');
     document.body.style.overflow = 'auto';
     enablePDFInteractions();
+  }
+
+  // Zoom Functions
+  function zoomIn() {
+    if (currentZoom < 200) {
+      currentZoom += 25;
+      updateZoom();
+    }
+  }
+
+  function zoomOut() {
+    if (currentZoom > 50) {
+      currentZoom -= 25;
+      updateZoom();
+    }
+  }
+
+  function resetZoom() {
+    currentZoom = 100;
+    updateZoom();
+  }
+
+  function updateZoom() {
+    if (pdfIframe) {
+      pdfIframe.style.width = `${currentZoom}%`;
+      pdfIframe.style.height = `${currentZoom}%`;
+      
+      // Update zoom percentage display
+      const zoomDisplay = document.querySelector('.text-sm.font-medium.text-neutral-700');
+      if (zoomDisplay) {
+        zoomDisplay.textContent = `${currentZoom}%`;
+      }
+    }
   }
 
   function disablePDFInteractions() {
