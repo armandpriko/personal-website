@@ -19,28 +19,116 @@ const { title, description = 'Portfolio de Dzudzogbe Prince Armand Koumi' } = As
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="author" content="Dzudzogbe Prince Armand Koumi" />
+    <meta name="keywords" content="Data Scientist, Machine Learning, Agriculture de précision, Télédétection, Agro-économie, Python, R, QGIS, Madagascar, France, Togo" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="fr" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://armandkoumi.github.io/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://armandkoumi.github.io/images/armand-profile.jpg" />
+    <meta property="og:site_name" content="Dzudzogbe Prince Armand Koumi - Portfolio" />
+    <meta property="og:locale" content="fr_FR" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://armandkoumi.github.io/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="https://armandkoumi.github.io/images/armand-profile.jpg" />
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#10b981" />
+    <meta name="msapplication-TileColor" content="#10b981" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Armand Koumi" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dzudzogbe Prince Armand Koumi",
+      "jobTitle": "Data Scientist en agriculture, agro-alimentaire et environnement",
+      "description": "Spécialisé en agriculture, environnement et agroalimentaire, je mobilise ma triple compétence en agronomie, statistique et informatique pour développer des outils d'aide à la décision.",
+      "url": "https://armandkoumi.github.io/",
+      "image": "https://armandkoumi.github.io/images/armand-profile.jpg",
+      "email": "koumiprince@gmail.com",
+      "telephone": "+33 6 02 89 23 54",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paris",
+        "addressCountry": "France"
+      },
+      "alumniOf": [
+        "Institut Polytechnique UniLaSalle Rouen",
+        "École Normale Supérieure (ENS-PSL)",
+        "Université de Lomé"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Fondation pour les Aires Protégées et de la Biodiversité de Madagascar (FAPBM)"
+      },
+      "knowsAbout": [
+        "Machine Learning",
+        "Data Science",
+        "Agriculture de précision",
+        "Télédétection",
+        "Python",
+        "R",
+        "QGIS"
+      ],
+              "sameAs": [
+                "https://www.linkedin.com/in/dzudzogbe-prince-armand-koumi",
+                "https://github.com/armandpriko",
+                "https://www.youtube.com/@Ddexplora",
+                "https://www.researchgate.net/profile/Dzudzogbe-Koumi-2"
+              ]
+    }
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.0.3/src/regular/style.css" rel="stylesheet">
   </head>
   <body class="bg-neutral-50 text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50 font-sans antialiased selection:bg-green-500 selection:text-white transition-colors duration-300">
-    <div id="app" class="min-h-screen relative pb-16">
-      <button id="theme-toggle" class="fixed top-4 right-4 z-50 bg-neutral-200 dark:bg-neutral-800 p-2 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors">
-        <i id="theme-icon" class="ph ph-moon-stars dark:ph-sun text-xl"></i>
-      </button>
-      <slot />
+    <div id="app" class="min-h-screen">
+      <!-- Top Navigation Bar -->
       <Navigation />
+      
+      <!-- Main Content -->
+      <main class="pt-20">
+        <slot />
+      </main>
+      
+      <!-- Top Right Controls -->
+      <div class="fixed top-4 right-4 z-50 flex gap-3">
+        <a href="https://cvdesignr.com/p/683580e517ed8" target="_blank" 
+           class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl flex items-center">
+          <i class="ph ph-download mr-2"></i>
+          CV
+        </a>
+        <button id="theme-toggle" class="bg-neutral-200 dark:bg-neutral-800 p-3 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors shadow-lg hover:shadow-xl">
+          <i id="theme-icon" class="ph ph-moon-stars text-xl text-neutral-700 dark:text-neutral-300"></i>
+        </button>
+      </div>
     </div>
     <script is:inline>
       function setTheme(theme) {
+        const html = document.documentElement;
         if (theme === 'dark') {
-          document.documentElement.classList.add('dark');
-          document.body.classList.add('dark');
+          html.classList.add('dark');
           localStorage.setItem('theme', 'dark');
         } else {
-          document.documentElement.classList.remove('dark');
-          document.body.classList.remove('dark');
+          html.classList.remove('dark');
           localStorage.setItem('theme', 'light');
         }
         updateThemeIcon();
@@ -48,12 +136,12 @@ const { title, description = 'Portfolio de Dzudzogbe Prince Armand Koumi' } = As
 
       function updateThemeIcon() {
         const themeIcon = document.getElementById('theme-icon');
-        if (document.documentElement.classList.contains('dark')) {
-          themeIcon.classList.remove('ph-moon-stars');
-          themeIcon.classList.add('ph-sun');
-        } else {
-          themeIcon.classList.remove('ph-sun');
-          themeIcon.classList.add('ph-moon-stars');
+        if (themeIcon) {
+          if (document.documentElement.classList.contains('dark')) {
+            themeIcon.className = 'ph ph-sun text-xl text-yellow-400';
+          } else {
+            themeIcon.className = 'ph ph-moon-stars text-xl text-neutral-700';
+          }
         }
       }
 
@@ -68,26 +156,32 @@ const { title, description = 'Portfolio de Dzudzogbe Prince Armand Koumi' } = As
         }
       }
 
-      document.addEventListener('astro:page-load', () => {
-        const themeToggle = document.getElementById('theme-toggle');
-        
+      document.addEventListener('DOMContentLoaded', () => {
         initTheme();
+        
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+          themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.contains('dark');
+            setTheme(isDark ? 'light' : 'dark');
+          });
+        }
+      });
 
-        themeToggle.addEventListener('click', () => {
-          const isDark = document.documentElement.classList.contains('dark');
-          setTheme(isDark ? 'light' : 'dark');
-        });
-
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-          if (!localStorage.getItem('theme')) {
-            setTheme(e.matches ? 'dark' : 'light');
-          }
-        }, { threshold: 0.1 });
-
-        sections.forEach(section => {
-          section.classList.add('opacity-0', 'transition-all', 'duration-700');
-          observer.observe(section);
-        });
+      // Also listen for astro page loads
+      document.addEventListener('astro:page-load', () => {
+        initTheme();
+        
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+          // Remove existing listeners to avoid duplicates
+          themeToggle.replaceWith(themeToggle.cloneNode(true));
+          const newToggle = document.getElementById('theme-toggle');
+          newToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.contains('dark');
+            setTheme(isDark ? 'light' : 'dark');
+          });
+        }
       });
     </script>
   </body>

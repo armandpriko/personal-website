@@ -1,6 +1,7 @@
 {
   "name": "dzudzogbe-prince-armand-koumi-website",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Portfolio professionnel de Dzudzogbe Prince Armand Koumi - Data Scientist en agriculture, agro-alimentaire et environnement",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -9,10 +10,13 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "test": "node test-setup.sh",
+    "deploy": "npm run build && touch dist/.nojekyll"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.1",
+    "@phosphor-icons/react": "^2.1.10",
     "@phosphor-icons/web": "^2.1.2",
     "astro": "^4.11.4",
     "framer-motion": "^12.11.0",
@@ -23,5 +27,30 @@
     "@typescript-eslint/parser": "^7.7.0",
     "eslint": "^8.57.0",
     "eslint-plugin-astro": "^0.31.4"
+  },
+  "keywords": [
+    "portfolio",
+    "data-science",
+    "machine-learning",
+    "agriculture",
+    "remote-sensing",
+    "python",
+    "astro",
+    "tailwind"
+  ],
+  "author": {
+    "name": "Dzudzogbe Prince Armand Koumi",
+    "email": "koumiprince@gmail.com",
+    "url": "https://armandkoumi.github.io"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/armandkoumi/personal-website"
+  },
+  "homepage": "https://armandkoumi.github.io/personal-website",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }

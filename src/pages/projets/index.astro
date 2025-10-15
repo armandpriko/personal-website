@@ -4,79 +4,433 @@ import '@phosphor-icons/web/regular/style.css';
 
 const projects = [
   {
-    title: "Community Deforestation Tracker",
-    description: "Projet de détection de déforestation dans le Bassin du Congo, utilisant l'intelligence artificielle pour surveiller et prévenir la déforestation.",
-    technologies: ["Python", "Deep Learning", "Satellite Imagery"],
+    title: "Community Deforestation Tracker (CDT)",
+    description: "Nouvelle version du Community Deforestation Tracker utilisant l'imagerie satellite et le machine learning pour la détection de déforestation dans le Bassin du Congo. Développement d'algorithmes de deep learning pour l'analyse en temps réel des images Sentinel.",
+    longDescription: "Projet développé chez Omdena en tant qu'Ingénieur Machine Learning Junior. Le CDT utilise des techniques avancées de computer vision et de deep learning pour analyser les images satellites Sentinel-2 et détecter les changements de couverture forestière en temps quasi-réel. Le système intègre des modèles de détection d'objets et de segmentation sémantique pour identifier les zones de déforestation avec une précision élevée.",
+    technologies: ["Python", "TensorFlow", "PyTorch", "Sentinel-2", "Computer Vision", "Deep Learning", "QGIS"],
     icon: "tree",
-    link: "#",
-    githubLink: "#"
+    category: "Machine Learning & Remote Sensing",
+    status: "Completed",
+    year: "2023-2024",
+    githubLink: "https://github.com/armandkoumi/deforestation-tracker",
+    demoLink: "#",
+    image: "/images/projects/cdt-preview.jpg",
+    features: [
+      "Détection automatique de déforestation en temps quasi-réel",
+      "Interface web interactive pour visualisation des résultats",
+      "Intégration avec les données Sentinel-2",
+      "Modèles de deep learning optimisés pour les images satellites",
+      "API REST pour intégration avec d'autres systèmes"
+    ],
+    metrics: {
+      accuracy: "94.2%",
+      processingTime: "< 30s",
+      coverage: "Bassin du Congo"
+    }
   },
   {
-    title: "Urban AgriTech",
-    description: "Système de pilotage d'installations agricoles urbaines avec IoT, optimisant la production agricole en milieu urbain.",
-    technologies: ["IoT", "Géospatial", "Data Analysis"],
+    title: "Soil Health Analysis - Mediterranean Climate",
+    description: "Analyse des effets de l'agriculture conventionnelle et de l'agriculture de conservation sur la santé des sols en climat méditerranéen, combinant modélisation mécaniste et Machine Learning causal.",
+    longDescription: "Projet de recherche développé à l'ENS-PSL dans le cadre de l'initiative PRIMA. Cette recherche combine des approches de modélisation mécaniste (RothC, Century) avec des techniques de Machine Learning causal pour analyser l'impact des pratiques agricoles sur la santé des sols. Le projet intègre des données multisources incluant LUCAS, SoilGrids, ERAS, et les données satellites Copernicus/Sentinel-2 et MODIS.",
+    technologies: ["Python", "R", "Machine Learning", "RothC", "Century", "LUCAS", "SoilGrids", "Sentinel-2", "MODIS"],
     icon: "leaf",
-    link: "#",
-    githubLink: "#"
+    category: "Research & Data Science",
+    status: "Completed",
+    year: "2025",
+    githubLink: "https://github.com/armandkoumi/soil-health-analysis",
+    demoLink: "#",
+    image: "/images/projects/soil-analysis-preview.jpg",
+    features: [
+      "Modélisation mécaniste des cycles du carbone",
+      "Machine Learning causal pour l'analyse d'impact",
+      "Intégration de données multisources",
+      "Pipeline de validation croisée des modèles",
+      "Métriques NSE/KGE pour évaluation des performances"
+    ],
+    metrics: {
+      models: "3 modèles intégrés",
+      accuracy: "NSE > 0.7",
+      coverage: "Méditerranée"
+    }
   },
   {
-    title: "Drone Mapping Solution",
-    description: "Application de cartographie et d'analyse géospatiale utilisant des données de drone pour l'agriculture de précision.",
-    technologies: ["Drone", "GIS", "Python"],
-    icon: "drone",
-    link: "#",
-    githubLink: "#"
+    title: "Soil Spectroscopy & Predictive Modeling",
+    description: "Analyse des sols de Haute-Normandie utilisant la spectroscopie proche infrarouge (NIRS) et développement de modèles prédictifs pour les indicateurs bio-physico-chimiques de qualité du sol.",
+    longDescription: "Projet développé à UniLaSalle Rouen - AGHYLE. Utilisation de techniques chimiométriques avancées et de machine learning pour développer des modèles prédictifs des propriétés du sol à partir des spectres NIRS. Le projet vise à supporter la gestion durable des sols et l'agriculture de précision en fournissant des outils d'évaluation rapide de la qualité du sol.",
+    technologies: ["R", "Python", "Chemometrics", "Machine Learning", "NIRS", "Feature Engineering", "Cross-validation"],
+    icon: "flask",
+    category: "Data Science & Analytics",
+    status: "Completed",
+    year: "2025",
+    githubLink: "https://github.com/armandkoumi/soil-spectroscopy",
+    demoLink: "#",
+    image: "/images/projects/spectroscopy-preview.jpg",
+    features: [
+      "Préprocessing avancé des spectres NIRS",
+      "Sélection automatique de longueurs d'onde",
+      "Modèles de régression multiple optimisés",
+      "Validation croisée et métriques de performance",
+      "Visualisation interactive des résultats"
+    ],
+    metrics: {
+      accuracy: "R² > 0.85",
+      samples: "500+ échantillons",
+      properties: "15+ propriétés prédites"
+    }
   },
   {
-    title: "Climate Data Dashboard",
-    description: "Tableau de bord interactif pour visualiser et analyser les données climatiques et environnementales.",
-    technologies: ["Data Visualization", "React", "Climate Data"],
-    icon: "chart-line",
-    link: "#",
-    githubLink: "#"
+    title: "Nexus Observatory Data Platform",
+    description: "Plateforme d'agrégation et de traitement de données globales pour la recherche sur les risques climatiques, intégrant des datasets environnementaux, socio-économiques et géopolitiques.",
+    longDescription: "Projet développé au Global Center for Risk and Innovation (GCRI) - Nexus Observatory & GRIx. Supervision de la collecte, curation et intégration de datasets globaux pour la recherche sur les risques climatiques. Mise en place d'architectures data lake et de protocoles de métadonnées pour assurer l'intégrité des données et la reproductibilité sur des plateformes open-access.",
+    technologies: ["Python", "Data Engineering", "ETL", "Data Lake", "Metadata Standards", "Quality Control", "Open Data"],
+    icon: "database",
+    category: "Data Engineering & Platforms",
+    status: "Completed",
+    year: "2024-2025",
+    githubLink: "https://github.com/armandkoumi/nexus-observatory",
+    demoLink: "#",
+    image: "/images/projects/nexus-preview.jpg",
+    features: [
+      "Architecture data lake scalable",
+      "Protocoles de métadonnées FAIR",
+      "Contrôle qualité automatisé",
+      "APIs REST pour accès aux données",
+      "Documentation technique complète"
+    ],
+    metrics: {
+      datasets: "50+ datasets intégrés",
+      storage: "10+ TB",
+      users: "100+ chercheurs"
+    }
   }
 ];
 ---
 
 <MainLayout title="Projets - Dzudzogbe Prince Armand Koumi">
-  <main class="container mx-auto px-4 py-16 max-w-4xl">
-    <section>
-      <h1 class="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
+  <main class="container mx-auto px-4 py-16 max-w-6xl">
+    <!-- Header Section -->
+    <section class="text-center mb-16">
+      <h1 class="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
         Mes Projets
       </h1>
-      <div class="grid md:grid-cols-2 gap-6">
-        {projects.map(project => (
-          <div class="bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors group shadow-md dark:shadow-none flex flex-col">
-            <div class="flex items-center mb-4">
-              <i class={`ph ph-${project.icon} w-10 h-10 text-green-500 mr-4`}></i>
-              <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">{project.title}</h2>
-            </div>
-            <p class="text-neutral-600 dark:text-neutral-300 mb-4 flex-grow">{project.description}</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              {project.technologies.map(tech => (
-                <span class="bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 px-2 py-1 rounded-full text-sm">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <div class="flex justify-between mt-auto">
-              <a href={project.link} class="bg-green-500 text-white px-3 py-2 rounded-lg text-sm hover:bg-green-600 transition">
-                Voir le projet
-              </a>
-              <a href={project.githubLink} target="_blank" class="bg-neutral-700 text-white px-3 py-2 rounded-lg text-sm hover:bg-neutral-800 transition flex items-center">
-                <i class="ph ph-github-logo mr-2"></i>GitHub
-              </a>
-            </div>
-          </div>
-        ))}
+      <p class="text-xl text-neutral-300 mb-8">
+        Découvrez mes projets en Data Science, Machine Learning et Agriculture de précision
+      </p>
+      
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        <button class="filter-btn active" data-filter="all">
+          <i class="ph ph-grid-four mr-2"></i>Tous les projets
+        </button>
+        <button class="filter-btn" data-filter="Machine Learning">
+          <i class="ph ph-brain mr-2"></i>Machine Learning
+        </button>
+        <button class="filter-btn" data-filter="Research">
+          <i class="ph ph-flask mr-2"></i>Recherche
+        </button>
+        <button class="filter-btn" data-filter="Data Science">
+          <i class="ph ph-chart-line mr-2"></i>Data Science
+        </button>
+        <button class="filter-btn" data-filter="Data Engineering">
+          <i class="ph ph-database mr-2"></i>Data Engineering
+        </button>
       </div>
     </section>
+
+    <!-- Projects Grid -->
+    <section class="grid lg:grid-cols-2 gap-8">
+      {projects.map((project, index) => (
+        <div class="project-card" data-category={project.category} data-index={index}>
+          <!-- Project Image/Preview -->
+          <div class="relative overflow-hidden rounded-t-lg bg-gradient-to-br from-green-500 to-blue-600 h-48 flex items-center justify-center">
+            <i class={`ph ph-${project.icon} text-6xl text-white opacity-80`}></i>
+            <div class="absolute top-4 right-4">
+              <span class={`px-3 py-1 rounded-full text-xs font-medium ${
+                project.status === 'Completed' ? 'bg-green-900 text-green-300' : 'bg-blue-900 text-blue-300'
+              }`}>
+                {project.status}
+              </span>
+            </div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-neutral-900 bg-opacity-50 text-white px-2 py-1 rounded text-xs">
+                {project.year}
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Content -->
+          <div class="bg-neutral-100 dark:bg-neutral-900 p-6 rounded-b-lg">
+            <!-- Project Header -->
+            <div class="mb-4">
+              <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+                {project.title}
+              </h3>
+              <p class="text-sm text-neutral-500 mb-3">{project.category}</p>
+              <p class="text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                {project.description}
+              </p>
+            </div>
+
+            <!-- Technologies -->
+            <div class="mb-4">
+              <h4 class="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">Technologies utilisées :</h4>
+              <div class="flex flex-wrap gap-2">
+                {project.technologies.slice(0, 6).map(tech => (
+                  <span class="bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 px-2 py-1 rounded-full text-xs">
+                    {tech}
+                  </span>
+                ))}
+                {project.technologies.length > 6 && (
+                  <span class="text-xs text-neutral-500">+{project.technologies.length - 6} autres</span>
+                )}
+              </div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="mb-6">
+              <h4 class="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">Métriques clés :</h4>
+              <div class="grid grid-cols-2 gap-4">
+                {Object.entries(project.metrics).map(([key, value]) => (
+                  <div class="text-center">
+                    <div class="text-lg font-bold text-green-500">{value}</div>
+                    <div class="text-xs text-neutral-500">{key}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex gap-3">
+              <button class="project-detail-btn flex-1 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm transition flex items-center justify-center" data-project={index}>
+                <i class="ph ph-eye mr-2"></i>Détails
+              </button>
+              <a href={project.githubLink} target="_blank" class="bg-neutral-700 hover:bg-neutral-800 text-white px-4 py-2 rounded-lg text-sm transition flex items-center justify-center">
+                <i class="ph ph-github-logo mr-2"></i>GitHub
+              </a>
+              {project.demoLink !== "#" && (
+                <a href={project.demoLink} target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm transition flex items-center justify-center">
+                  <i class="ph ph-play mr-2"></i>Demo
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </section>
   </main>
+
+  <!-- Project Detail Modal -->
+  <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-neutral-100 dark:bg-neutral-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-6">
+        <!-- Modal Header -->
+        <div class="flex justify-between items-start mb-6">
+          <div>
+            <h2 id="modal-title" class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2"></h2>
+            <p id="modal-category" class="text-neutral-500 mb-4"></p>
+          </div>
+          <button id="close-modal" class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300">
+            <i class="ph ph-x text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="space-y-6">
+          <!-- Long Description -->
+          <div>
+            <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Description détaillée</h3>
+            <p id="modal-description" class="text-neutral-600 dark:text-neutral-300 leading-relaxed"></p>
+          </div>
+
+          <!-- Features -->
+          <div>
+            <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Fonctionnalités principales</h3>
+            <ul id="modal-features" class="space-y-2"></ul>
+          </div>
+
+          <!-- Technologies -->
+          <div>
+            <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Technologies utilisées</h3>
+            <div id="modal-technologies" class="flex flex-wrap gap-2"></div>
+          </div>
+
+          <!-- Metrics -->
+          <div>
+            <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Métriques et performances</h3>
+            <div id="modal-metrics" class="grid grid-cols-2 md:grid-cols-3 gap-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </MainLayout>
 
 <script is:inline>
+  const projectsData = [
+    {
+      title: "Community Deforestation Tracker (CDT)",
+      description: "Projet développé chez Omdena en tant qu'Ingénieur Machine Learning Junior. Le CDT utilise des techniques avancées de computer vision et de deep learning pour analyser les images satellites Sentinel-2 et détecter les changements de couverture forestière en temps quasi-réel. Le système intègre des modèles de détection d'objets et de segmentation sémantique pour identifier les zones de déforestation avec une précision élevée.",
+      category: "Machine Learning & Remote Sensing",
+      technologies: ["Python", "TensorFlow", "PyTorch", "Sentinel-2", "Computer Vision", "Deep Learning", "QGIS"],
+      features: [
+        "Détection automatique de déforestation en temps quasi-réel",
+        "Interface web interactive pour visualisation des résultats",
+        "Intégration avec les données Sentinel-2",
+        "Modèles de deep learning optimisés pour les images satellites",
+        "API REST pour intégration avec d'autres systèmes"
+      ],
+      metrics: {
+        accuracy: "94.2%",
+        processingTime: "< 30s",
+        coverage: "Bassin du Congo"
+      }
+    },
+    {
+      title: "Soil Health Analysis - Mediterranean Climate",
+      description: "Projet de recherche développé à l'ENS-PSL dans le cadre de l'initiative PRIMA. Cette recherche combine des approches de modélisation mécaniste (RothC, Century) avec des techniques de Machine Learning causal pour analyser l'impact des pratiques agricoles sur la santé des sols. Le projet intègre des données multisources incluant LUCAS, SoilGrids, ERAS, et les données satellites Copernicus/Sentinel-2 et MODIS.",
+      category: "Research & Data Science",
+      technologies: ["Python", "R", "Machine Learning", "RothC", "Century", "LUCAS", "SoilGrids", "Sentinel-2", "MODIS"],
+      features: [
+        "Modélisation mécaniste des cycles du carbone",
+        "Machine Learning causal pour l'analyse d'impact",
+        "Intégration de données multisources",
+        "Pipeline de validation croisée des modèles",
+        "Métriques NSE/KGE pour évaluation des performances"
+      ],
+      metrics: {
+        models: "3 modèles intégrés",
+        accuracy: "NSE > 0.7",
+        coverage: "Méditerranée"
+      }
+    },
+    {
+      title: "Soil Spectroscopy & Predictive Modeling",
+      description: "Projet développé à UniLaSalle Rouen - AGHYLE. Utilisation de techniques chimiométriques avancées et de machine learning pour développer des modèles prédictifs des propriétés du sol à partir des spectres NIRS. Le projet vise à supporter la gestion durable des sols et l'agriculture de précision en fournissant des outils d'évaluation rapide de la qualité du sol.",
+      category: "Data Science & Analytics",
+      technologies: ["R", "Python", "Chemometrics", "Machine Learning", "NIRS", "Feature Engineering", "Cross-validation"],
+      features: [
+        "Préprocessing avancé des spectres NIRS",
+        "Sélection automatique de longueurs d'onde",
+        "Modèles de régression multiple optimisés",
+        "Validation croisée et métriques de performance",
+        "Visualisation interactive des résultats"
+      ],
+      metrics: {
+        accuracy: "R² > 0.85",
+        samples: "500+ échantillons",
+        properties: "15+ propriétés prédites"
+      }
+    },
+    {
+      title: "Nexus Observatory Data Platform",
+      description: "Projet développé au Global Center for Risk and Innovation (GCRI) - Nexus Observatory & GRIx. Supervision de la collecte, curation et intégration de datasets globaux pour la recherche sur les risques climatiques. Mise en place d'architectures data lake et de protocoles de métadonnées pour assurer l'intégrité des données et la reproductibilité sur des plateformes open-access.",
+      category: "Data Engineering & Platforms",
+      technologies: ["Python", "Data Engineering", "ETL", "Data Lake", "Metadata Standards", "Quality Control", "Open Data"],
+      features: [
+        "Architecture data lake scalable",
+        "Protocoles de métadonnées FAIR",
+        "Contrôle qualité automatisé",
+        "APIs REST pour accès aux données",
+        "Documentation technique complète"
+      ],
+      metrics: {
+        datasets: "50+ datasets intégrés",
+        storage: "10+ TB",
+        users: "100+ chercheurs"
+      }
+    }
+  ];
+
   document.addEventListener('astro:page-load', () => {
-    const projects = document.querySelectorAll('section > div > div');
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter projects
+        const filter = btn.dataset.filter;
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category.includes(filter)) {
+            card.style.display = 'block';
+            card.classList.add('animate-fade-in');
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Modal functionality
+    const modal = document.getElementById('project-modal');
+    const closeModal = document.getElementById('close-modal');
+    const projectDetailBtns = document.querySelectorAll('.project-detail-btn');
+
+    projectDetailBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const projectIndex = parseInt(btn.dataset.project);
+        const project = projectsData[projectIndex];
+        
+        if (project) {
+          // Populate modal content
+          document.getElementById('modal-title').textContent = project.title;
+          document.getElementById('modal-category').textContent = project.category;
+          document.getElementById('modal-description').textContent = project.description;
+          
+          // Populate features
+          const featuresList = document.getElementById('modal-features');
+          featuresList.innerHTML = '';
+          project.features.forEach(feature => {
+            const li = document.createElement('li');
+            li.className = 'flex items-start text-neutral-600 dark:text-neutral-300';
+            li.innerHTML = `<i class="ph ph-check text-green-500 mr-2 mt-1"></i>${feature}`;
+            featuresList.appendChild(li);
+          });
+          
+          // Populate technologies
+          const techContainer = document.getElementById('modal-technologies');
+          techContainer.innerHTML = '';
+          project.technologies.forEach(tech => {
+            const span = document.createElement('span');
+            span.className = 'bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 px-3 py-1 rounded-full text-sm';
+            span.textContent = tech;
+            techContainer.appendChild(span);
+          });
+          
+          // Populate metrics
+          const metricsContainer = document.getElementById('modal-metrics');
+          metricsContainer.innerHTML = '';
+          Object.entries(project.metrics).forEach(([key, value]) => {
+            const div = document.createElement('div');
+            div.className = 'text-center bg-neutral-200 dark:bg-neutral-800 p-4 rounded-lg';
+            div.innerHTML = `
+              <div class="text-2xl font-bold text-green-500 mb-1">${value}</div>
+              <div class="text-sm text-neutral-600 dark:text-neutral-400">${key}</div>
+            `;
+            metricsContainer.appendChild(div);
+          });
+          
+          modal.classList.remove('hidden');
+        }
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+      }
+    });
+
+    // Animation observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -85,9 +439,33 @@ const projects = [
       });
     }, { threshold: 0.1 });
 
-    projects.forEach(project => {
-      project.classList.add('opacity-0', 'transition-all', 'duration-700');
-      observer.observe(project);
+    projectCards.forEach(card => {
+      card.classList.add('opacity-0', 'transition-all', 'duration-700');
+      observer.observe(card);
     });
   });
 </script>
+
+<style>
+  .filter-btn {
+    @apply bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-lg text-sm transition-all duration-200 hover:bg-neutral-300 dark:hover:bg-neutral-600 flex items-center;
+  }
+  
+  .filter-btn.active {
+    @apply bg-green-500 text-white hover:bg-green-600;
+  }
+  
+  .project-card {
+    @apply transition-all duration-300 hover:transform hover:scale-105;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+</style>
+

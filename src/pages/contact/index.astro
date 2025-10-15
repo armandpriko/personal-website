@@ -1,140 +1,175 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import '@phosphor-icons/web/regular/style.css';
-
-const contactMethods = [
-  {
-    icon: 'envelope-simple',
-    type: 'Email',
-    value: 'koumiprince@gmail.com',
-    link: 'mailto:koumiprince@gmail.com',
-    color: 'text-green-500'
-  },
-  {
-    icon: 'phone',
-    type: 'Téléphone',
-    value: '+33 6 02 89 23 54',
-    link: 'tel:+33602892354',
-    color: 'text-blue-500'
-  }
-];
-
-const socialLinks = [
-  {
-    icon: 'linkedin-logo',
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/dzudzogbe-prince-armand-koumi-',
-    color: 'text-blue-600'
-  },
-  {
-    icon: 'tiktok-logo',
-    name: 'TikTok',
-    url: 'https://www.tiktok.com/@dzudzogbeprince',
-    color: 'text-black dark:text-white'
-  },
-  {
-    icon: 'youtube-logo',
-    name: 'YouTube',
-    url: 'https://www.youtube.com/@dzudzogbeprince',
-    color: 'text-red-600'
-  }
-];
 ---
 
 <MainLayout title="Contact - Dzudzogbe Prince Armand Koumi">
-  <main class="container mx-auto px-4 py-16 max-w-4xl space-y-12">
-    <section class="text-center">
-      <h1 class="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
+  <main class="container mx-auto px-4 py-16 max-w-4xl">
+    <!-- Header Section -->
+    <section class="text-center mb-16">
+      <h1 class="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
         Contactez-moi
       </h1>
-      
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 shadow-md dark:shadow-none">
-          <h2 class="text-2xl font-semibold mb-6 text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-800 pb-3">
-            <i class="ph ph-info mr-2 text-blue-500"></i>Informations de contact
-          </h2>
-          <div class="space-y-4">
-            {contactMethods.map(method => (
-              <div class="flex items-center space-x-4">
-                <i class={`ph ph-${method.icon} text-3xl ${method.color}`}></i>
-                <div>
-                  <p class="text-neutral-600 dark:text-neutral-300">{method.type}</p>
-                  <a 
-                    href={method.link} 
-                    class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 hover:text-blue-600 dark:hover:text-blue-400 transition"
-                  >
-                    {method.value}
-                  </a>
-                </div>
-              </div>
-            ))}
+      <p class="text-xl text-neutral-300 mb-8">
+        Discutons de vos projets en Data Science, Agriculture de précision ou Machine Learning
+      </p>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="grid md:grid-cols-2 gap-12 mb-16">
+      <!-- Contact Details -->
+      <div class="space-y-8">
+        <h2 class="text-3xl font-semibold text-neutral-100 mb-6">Informations de contact</h2>
+        
+        <div class="contact-item">
+          <div class="flex items-center mb-4">
+            <div class="bg-gradient-to-br from-green-500 to-blue-600 p-3 rounded-lg mr-4">
+              <i class="ph ph-envelope text-2xl text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Email</h3>
+              <a href="mailto:koumiprince@gmail.com" class="text-neutral-600 dark:text-neutral-300 hover:text-green-500 transition">
+                koumiprince@gmail.com
+              </a>
+            </div>
           </div>
         </div>
-        
-        <div class="bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 shadow-md dark:shadow-none">
-          <h2 class="text-2xl font-semibold mb-6 text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-800 pb-3">
-            <i class="ph ph-share-network mr-2 text-green-500"></i>Réseaux sociaux
-          </h2>
-          <div class="grid grid-cols-3 gap-4">
-            {socialLinks.map(social => (
-              <a 
-                href={social.url} 
-                target="_blank" 
-                class={`flex flex-col items-center ${social.color} hover:opacity-80 transition`}
-              >
-                <i class={`ph ph-${social.icon} text-4xl mb-2`}></i>
-                <span class="text-sm text-neutral-600 dark:text-neutral-300">{social.name}</span>
+
+        <div class="contact-item">
+          <div class="flex items-center mb-4">
+            <div class="bg-gradient-to-br from-blue-500 to-purple-600 p-3 rounded-lg mr-4">
+              <i class="ph ph-phone text-2xl text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Téléphone</h3>
+              <a href="tel:+33602892354" class="text-neutral-600 dark:text-neutral-300 hover:text-blue-500 transition">
+                +33 6 02 89 23 54
               </a>
-            ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="flex items-center mb-4">
+            <div class="bg-gradient-to-br from-purple-500 to-pink-600 p-3 rounded-lg mr-4">
+              <i class="ph ph-map-pin text-2xl text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Localisation</h3>
+              <p class="text-neutral-600 dark:text-neutral-300">Paris, France</p>
+              <p class="text-sm text-neutral-500 dark:text-neutral-400">Disponible pour missions internationales</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="contact-item">
+          <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Réseaux sociaux</h3>
+          <div class="flex space-x-4">
+            <a href="https://www.linkedin.com/in/dzudzogbe-prince-armand-koumi" target="_blank" 
+               class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg transition">
+              <i class="ph ph-linkedin-logo text-xl"></i>
+            </a>
+            <a href="https://github.com/armandpriko" target="_blank" 
+               class="bg-neutral-700 hover:bg-neutral-800 text-white p-3 rounded-lg transition">
+              <i class="ph ph-github-logo text-xl"></i>
+            </a>
+            <a href="https://www.youtube.com/@Ddexplora" target="_blank" 
+               class="bg-red-600 hover:bg-red-700 text-white p-3 rounded-lg transition">
+              <i class="ph ph-youtube-logo text-xl"></i>
+            </a>
+            <a href="https://www.researchgate.net/profile/Dzudzogbe-Koumi-2?ev=hdr_xprf" target="_blank" 
+               class="bg-blue-800 hover:bg-blue-900 text-white p-3 rounded-lg transition">
+              <i class="ph ph-graduation-cap text-xl"></i>
+            </a>
           </div>
         </div>
       </div>
-      
-      <div class="mt-12 bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 shadow-md dark:shadow-none">
-        <h2 class="text-2xl font-semibold mb-6 text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-800 pb-3 flex items-center">
-          <i class="ph ph-paper-plane-tilt mr-3 text-purple-500 text-3xl"></i>Envoyez-moi un message
-        </h2>
-        <form id="contact-form" class="space-y-6">
-          <div class="grid md:grid-cols-2 gap-4">
-            <div class="relative">
-              <label for="name" class="absolute -top-2 left-3 bg-neutral-50 dark:bg-neutral-900 px-1 text-xs text-neutral-500 dark:text-neutral-400">Nom complet</label>
-              <input 
-                id="name"
-                type="text" 
-                required
-                placeholder="Votre nom"
-                class="w-full p-3 pt-5 bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition"
-              />
-            </div>
-            <div class="relative">
-              <label for="email" class="absolute -top-2 left-3 bg-neutral-50 dark:bg-neutral-900 px-1 text-xs text-neutral-500 dark:text-neutral-400">Adresse email</label>
-              <input 
-                id="email"
-                type="email" 
-                required
-                placeholder="vous@exemple.com"
-                class="w-full p-3 pt-5 bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition"
-              />
-            </div>
+
+      <!-- Contact Form -->
+      <div class="bg-neutral-100 dark:bg-neutral-900 rounded-lg p-8">
+        <h2 class="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6">Envoyez-moi un message</h2>
+        
+        <form class="space-y-6" action="#" method="POST">
+          <div>
+            <label for="name" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Nom complet
+            </label>
+            <input type="text" id="name" name="name" required
+                   class="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100">
           </div>
-          <div class="relative">
-            <label for="message" class="absolute -top-2 left-3 bg-neutral-50 dark:bg-neutral-900 px-1 text-xs text-neutral-500 dark:text-neutral-400">Votre message</label>
-            <textarea 
-              id="message"
-              required
-              placeholder="Écrivez votre message ici..."
-              rows="5" 
-              class="w-full p-3 pt-5 bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition resize-none"
-            ></textarea>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Email
+            </label>
+            <input type="email" id="email" name="email" required
+                   class="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100">
           </div>
-          <button 
-            type="submit" 
-            class="w-full bg-gradient-to-r from-green-500 to-blue-500 text-white py-3 rounded-lg hover:from-green-600 hover:to-blue-600 transition flex items-center justify-center space-x-2 group"
-          >
-            <i class="ph ph-paper-plane-tilt text-xl group-hover:animate-bounce"></i>
-            <span>Envoyer le message</span>
+
+          <div>
+            <label for="subject" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Sujet
+            </label>
+            <select id="subject" name="subject" required
+                    class="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100">
+              <option value="">Sélectionnez un sujet</option>
+              <option value="collaboration">Collaboration professionnelle</option>
+              <option value="projet">Proposition de projet</option>
+              <option value="consultation">Consultation technique</option>
+              <option value="formation">Formation / Conférence</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Message
+            </label>
+            <textarea id="message" name="message" rows="5" required
+                      placeholder="Décrivez votre projet ou votre demande..."
+                      class="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100"></textarea>
+          </div>
+
+          <button type="submit" 
+                  class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition flex items-center justify-center">
+            <i class="ph ph-paper-plane mr-2"></i>
+            Envoyer le message
           </button>
         </form>
+      </div>
+    </section>
+
+    <!-- Availability -->
+    <section class="bg-neutral-100 dark:bg-neutral-900 rounded-lg p-8">
+      <h2 class="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6 text-center">
+        Disponibilités
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center">
+          <div class="bg-green-100 dark:bg-green-900 p-4 rounded-lg mb-4">
+            <i class="ph ph-check-circle text-3xl text-green-600 dark:text-green-400"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Consultation</h3>
+          <p class="text-neutral-600 dark:text-neutral-300">Disponible pour des consultations techniques en Data Science et Agriculture de précision</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg mb-4">
+            <i class="ph ph-handshake text-3xl text-blue-600 dark:text-blue-400"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Collaboration</h3>
+          <p class="text-neutral-600 dark:text-neutral-300">Ouvert aux collaborations de recherche et projets innovants</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-purple-100 dark:bg-purple-900 p-4 rounded-lg mb-4">
+            <i class="ph ph-graduation-cap text-3xl text-purple-600 dark:text-purple-400"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Formation</h3>
+          <p class="text-neutral-600 dark:text-neutral-300">Interventions et formations en Machine Learning et Télédétection</p>
+        </div>
       </div>
     </section>
   </main>
@@ -142,7 +177,7 @@ const socialLinks = [
 
 <script is:inline>
   document.addEventListener('astro:page-load', () => {
-    const sections = document.querySelectorAll('section > div');
+    // Animation observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -151,9 +186,37 @@ const socialLinks = [
       });
     }, { threshold: 0.1 });
 
-    sections.forEach(section => {
-      section.classList.add('opacity-0', 'transition-all', 'duration-700');
-      observer.observe(section);
+    // Observe contact items
+    const contactItems = document.querySelectorAll('.contact-item');
+    contactItems.forEach(item => {
+      item.classList.add('opacity-0', 'transition-all', 'duration-700');
+      observer.observe(item);
     });
+
+    // Form submission (placeholder)
+    const form = document.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Merci pour votre message ! Je vous répondrai dans les plus brefs délais.');
+        form.reset();
+      });
+    }
   });
 </script>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .contact-item:hover {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+  }
+</style>
