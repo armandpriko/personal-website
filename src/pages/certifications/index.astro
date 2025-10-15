@@ -3,6 +3,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import '@phosphor-icons/web/regular/style.css';
 
 const certifications = [
+  // Zindi Challenges
   {
     title: "Microsoft Learn Location Mention Recognition Challenge",
     issuer: "Zindi & Microsoft",
@@ -10,12 +11,16 @@ const certifications = [
     icon: "map-pin",
     description: "Certification pour la participation au challenge de reconnaissance automatique de mentions de lieux dans les posts de microblogging lors d'urgences. Challenge organisé par Microsoft et HBKU.",
     pdfUrl: "/certificates/zindi-location-recognition-certificate.pdf",
+    imageUrl: "/images/zindi/location-recognition-certificate.png",
     rank: "77/320 (Top 25%)",
     score: "77/300",
     challenge: "Microsoft Learn Location Mention Recognition",
     question: "Can you identify locations in a tweet?",
     skills: ["Natural Language Processing", "Generative AI"],
-    prize: "$5,000 USD pool"
+    prize: "$5,000 USD pool",
+    category: "zindi",
+    credentialId: null,
+    credentialUrl: null
   },
   {
     title: "Togo Fiber Optics Uptake Prediction Challenge",
@@ -24,27 +29,213 @@ const certifications = [
     icon: "wifi-high",
     description: "Certification pour la participation au challenge de prédiction d'adoption de la fibre optique au Togo. Challenge organisé par le Ministère de l'Économie Numérique et de la Transformation du Togo.",
     pdfUrl: "/certificates/zindi-fiber-optics-certificate.pdf",
+    imageUrl: "/images/zindi/fiber-optics-certificate.png",
     rank: "30/93 (Top 50%)",
     score: "30/90",
     challenge: "Togo Fiber Optics Uptake Prediction Challenge",
     question: "Can you predict which households and businesses will have fiber optics access?",
     skills: ["Prediction", "Telecom"],
-    prize: "3,000,000 XOF pool"
+    prize: "3,000,000 XOF pool",
+    category: "zindi",
+    credentialId: null,
+    credentialUrl: null
   },
+  
+  // Microsoft & Azure
   {
-    title: "Télépilote de drone certifié (A1/A2/A3)",
-    issuer: "Agence européenne de la sécurité aérienne",
-    date: "Mai 2023",
-    icon: "drone",
-    description: "Certification européenne pour le pilotage de drones civils dans les catégories A1, A2 et A3, autorisant les vols en agglomération et hors agglomération.",
+    title: "Microsoft Certified: Azure Data Engineer Associate (DP-203)",
+    issuer: "Microsoft",
+    date: "Septembre 2023",
+    icon: "cloud",
+    description: "Certification Microsoft Azure pour les ingénieurs de données, couvrant la conception et l'implémentation de solutions de données sur Azure.",
     pdfUrl: null,
+    imageUrl: null,
     rank: null,
     score: null,
     challenge: null,
     question: null,
-    skills: ["Drone Piloting", "Aerial Photography", "Remote Sensing"],
-    prize: null
+    skills: ["Azure Data Factory", "Azure Databricks", "Azure Synapse", "Data Engineering"],
+    prize: null,
+    category: "microsoft",
+    credentialId: null,
+    credentialUrl: null
   },
+  {
+    title: "Microsoft Certified: Azure Data Scientist Associate (DP-100)",
+    issuer: "Microsoft",
+    date: "Août 2023",
+    icon: "brain",
+    description: "Certification Microsoft Azure pour les data scientists, couvrant l'utilisation d'Azure Machine Learning et des services d'IA.",
+    pdfUrl: null,
+    imageUrl: null,
+    rank: null,
+    score: null,
+    challenge: null,
+    question: null,
+    skills: ["Azure ML", "Machine Learning", "Data Science", "AI"],
+    prize: null,
+    category: "microsoft",
+    credentialId: null,
+    credentialUrl: null
+  },
+
+  // Google & Cloud
+  {
+    title: "Google Data Analysis Professional Certificate",
+    issuer: "Google",
+    date: "Août 2023",
+    icon: "chart-bar",
+    description: "Certification professionnelle Google en analyse de données, couvrant les outils et techniques d'analyse de données.",
+    pdfUrl: null,
+    imageUrl: null,
+    rank: null,
+    score: null,
+    challenge: null,
+    question: null,
+    skills: ["Data Analysis", "SQL", "R", "Tableau", "Google Analytics"],
+    prize: null,
+    category: "google",
+    credentialId: null,
+    credentialUrl: null
+  },
+  {
+    title: "Google Cloud Digital Leader",
+    issuer: "Google Cloud Training Online",
+    date: "Décembre 2023",
+    icon: "cloud-check",
+    description: "Certification Google Cloud pour les leaders numériques, couvrant les concepts fondamentaux du cloud computing.",
+    pdfUrl: null,
+    imageUrl: null,
+    rank: null,
+    score: null,
+    challenge: null,
+    question: null,
+    skills: ["Google Cloud", "Cloud Computing", "Digital Transformation"],
+    prize: null,
+    category: "google",
+    credentialId: null,
+    credentialUrl: null
+  },
+
+  // IBM
+  {
+    title: "R programming for Data Science Essentials",
+    issuer: "IBM",
+    date: "Août 2024",
+    icon: "chart-line",
+    description: "Certification IBM en programmation R pour la science des données, couvrant les concepts essentiels de R et son application en data science.",
+    pdfUrl: null,
+    imageUrl: null,
+    rank: null,
+    score: null,
+    challenge: null,
+    question: null,
+    skills: ["R Programming", "Data Science", "Statistical Analysis"],
+    prize: null,
+    category: "ibm",
+    credentialId: null,
+    credentialUrl: null
+  },
+
+  // Udacity
+  {
+    title: "AI programming with Python",
+    issuer: "Udacity",
+    date: "Décembre 2023",
+    icon: "robot",
+    description: "Nanodegree Udacity en programmation IA avec Python, couvrant les algorithmes d'intelligence artificielle et de machine learning.",
+    pdfUrl: null,
+    imageUrl: null,
+    rank: null,
+    score: null,
+    challenge: null,
+    question: null,
+    skills: ["Python", "AI", "Machine Learning", "Deep Learning"],
+    prize: null,
+    category: "udacity",
+    credentialId: null,
+    credentialUrl: null
+  },
+
+  // DroneDeploy
+  {
+    title: "Certified Agronomist Analyst",
+    issuer: "DroneDeploy",
+    date: "Février 2024",
+    icon: "leaf",
+    description: "Certification DroneDeploy pour analyste agronome, couvrant l'analyse de données agricoles et la télédétection.",
+    pdfUrl: null,
+    imageUrl: null,
+    rank: null,
+    score: null,
+    challenge: null,
+    question: null,
+    skills: ["Agricultural Analysis", "Remote Sensing", "Drone Technology"],
+    prize: null,
+    category: "dronedeploy",
+    credentialId: "kdtz6whcwfoj",
+    credentialUrl: null
+  },
+
+  // EASA Drone
+  {
+    title: "Brevet d'Aptitude de Pilote à Distance (BAPD) Catégorie A1, A2 et A3",
+    issuer: "EASA - European Union Aviation Safety Agency",
+    date: "Mai 2023",
+    icon: "drone",
+    description: "Certification européenne pour le pilotage de drones civils dans les catégories A1, A2 et A3, autorisant les vols en agglomération et hors agglomération. Expire en décembre 2025.",
+    pdfUrl: null,
+    imageUrl: null,
+    rank: null,
+    score: null,
+    challenge: null,
+    question: null,
+    skills: ["Drone Piloting", "Aerial Photography", "Remote Sensing", "Aviation Safety"],
+    prize: null,
+    category: "easa",
+    credentialId: "FRA-RP-000000026572",
+    credentialUrl: null
+  },
+
+  // UniLaSalle
+  {
+    title: "Major de promotion MSc. AFDM - UniLaSalle 2024/2025",
+    issuer: "UniLaSalle",
+    date: "Juillet 2025",
+    icon: "graduation-cap",
+    description: "Diplôme de major de promotion du Master Sciences en Agriculture, Forêt, Développement Durable et Métiers de l'Environnement (AFDM) à UniLaSalle.",
+    pdfUrl: null,
+    imageUrl: null,
+    rank: null,
+    score: null,
+    challenge: null,
+    question: null,
+    skills: ["Agriculture", "Forestry", "Sustainable Development", "Environmental Sciences"],
+    prize: null,
+    category: "unilasalle",
+    credentialId: "fb651492b7a0b865c823918a1db7a59372204b66",
+    credentialUrl: null
+  },
+  {
+    title: "Ambassadeur Promotion - j'ai réalisé",
+    issuer: "UniLaSalle",
+    date: "Octobre 2024",
+    icon: "medal",
+    description: "Certification d'ambassadeur de promotion UniLaSalle pour la réalisation de projets et l'engagement étudiant.",
+    pdfUrl: null,
+    imageUrl: null,
+    rank: null,
+    score: null,
+    challenge: null,
+    question: null,
+    skills: ["Leadership", "Project Management", "Student Engagement"],
+    prize: null,
+    category: "unilasalle",
+    credentialId: "4748d785615aa937ed40c060e898416206afef0a",
+    credentialUrl: null
+  },
+
+  // Conservation & Environment
   {
     title: "Certificat en conservation des aires protégées",
     issuer: "Université Senghor / UICN PAPACO",
@@ -52,14 +243,22 @@ const certifications = [
     icon: "tree",
     description: "Formation spécialisée en conservation de la biodiversité et gestion des aires protégées, avec mention. Programme de 15 ECTS couvrant les aspects écologiques, sociaux et économiques de la conservation.",
     pdfUrl: null,
+    imageUrl: null,
     rank: null,
     score: null,
     challenge: null,
     question: null,
     skills: ["Biodiversity Conservation", "Protected Areas Management", "Environmental Policy"],
-    prize: null
+    prize: null,
+    category: "conservation",
+    credentialId: null,
+    credentialUrl: null
   }
 ];
+
+// Pagination settings
+const certificationsPerPage = 6;
+const totalPages = Math.ceil(certifications.length / certificationsPerPage);
 ---
 
 <MainLayout title="Certifications - Dzudzogbe Prince Armand Koumi">
@@ -161,11 +360,17 @@ const certifications = [
           <div class="text-3xl font-bold mb-2">Drone</div>
           <div class="text-sm opacity-90">Télépilotage & Cartographie</div>
         </div>
+
         <div class="stat-card bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg p-6 text-center text-white">
           <div class="text-3xl font-bold mb-2">Conservation</div>
           <div class="text-sm opacity-90">Biodiversité & Aires Protégées</div>
         </div>
         
+        <div class="stat-card bg-gradient-to-br from-yellow-500 to-purple-600 rounded-lg p-6 text-center text-white">
+          <div class="text-3xl font-bold mb-2">Agriculture</div>
+          <div class="text-sm opacity-90">Biodiversité & Aires Protégées</div>
+        </div>
+
       </div>
     </section>
   </main>
