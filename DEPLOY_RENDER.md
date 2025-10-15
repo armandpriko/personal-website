@@ -2,12 +2,20 @@
 
 ## 🎯 **Pourquoi Render ?**
 - ✅ **Plus simple** que GitHub Pages
-- ✅ **Plus fiable** pour Astro
+- ✅ **Plus fiable** pour Astro avec animations
 - ✅ **Gratuit** avec des limites généreuses
 - ✅ **URL personnalisée** automatique
 - ✅ **Déploiement automatique** à chaque push
+- ✅ **Support JavaScript dynamique** et animations
 
 ## 📋 **Étapes de déploiement :**
+
+### **ℹ️ Type de site :**
+Votre site Astro avec animations et interactions JavaScript sera déployé comme un **"Static Site"** sur Render. C'est parfait car :
+- ✅ Astro génère des fichiers HTML/CSS/JS optimisés
+- ✅ Les animations et interactions fonctionnent parfaitement
+- ✅ Plus rapide qu'un serveur Node.js
+- ✅ Plus fiable et moins cher
 
 ### **1. Créer un compte Render**
 1. Allez sur : https://render.com/
