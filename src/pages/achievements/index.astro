@@ -42,70 +42,6 @@ const achievements = [
     tags: ["Power BI", "Data Visualization", "Conservation", "KPI Dashboard"],
     technologies: ["Power BI", "Python", "SQL", "Azure"]
   },
-  {
-    title: "Dashboard d'Analyse des Sols - UniLaSalle",
-    type: "project",
-    category: "dashboard",
-    date: "2025",
-    description: "Interface d'analyse des données de spectroscopie NIRS pour la prédiction des propriétés du sol. Visualisation interactive des modèles prédictifs et métriques de performance.",
-    link: null,
-    image: "/images/achievements/soil-dashboard.png",
-    icon: "leaf",
-    tags: ["NIRS Analysis", "Soil Prediction", "Machine Learning", "Data Science"],
-    technologies: ["R Shiny", "Python", "Machine Learning", "NIRS"]
-  },
-
-  // Projets Master - Rapports Analytiques
-  {
-    title: "Rapport d'Analyse Environnementale - Bassin du Congo",
-    type: "project",
-    category: "report",
-    date: "2024",
-    description: "Rapport complet d'analyse de la déforestation dans le Bassin du Congo utilisant l'imagerie satellite Sentinel-2 et des algorithmes de deep learning. Méthodologie et résultats détaillés.",
-    link: null,
-    image: "/images/achievements/congo-deforestation-report.png",
-    icon: "tree",
-    tags: ["Remote Sensing", "Deforestation", "Deep Learning", "Congo Basin"],
-    technologies: ["Python", "TensorFlow", "Sentinel-2", "QGIS"]
-  },
-  {
-    title: "Rapport de Modélisation des Sols - Climat Méditerranéen",
-    type: "project",
-    category: "report",
-    date: "2025",
-    description: "Rapport technique sur la modélisation de la santé des sols en climat méditerranéen. Intégration de données LUCAS, SoilGrids et satellites avec validation des modèles.",
-    link: null,
-    image: "/images/achievements/soil-modeling-report.png",
-    icon: "file-chart",
-    tags: ["Soil Modeling", "Machine Learning", "Climate", "Data Integration"],
-    technologies: ["R", "Python", "RothC", "Century", "LUCAS"]
-  },
-
-  // Certifications & Récompenses
-  {
-    title: "Major de Promotion MSc. AFDM - UniLaSalle",
-    type: "achievement",
-    category: "academic",
-    date: "2025",
-    description: "Diplôme de major de promotion du Master Sciences en Agriculture, Forêt, Développement Durable et Métiers de l'Environnement (AFDM) à UniLaSalle.",
-    link: null,
-    image: "/images/achievements/major-promotion.png",
-    icon: "graduation-cap",
-    tags: ["Academic Excellence", "Leadership", "Agriculture", "Environment"],
-    technologies: []
-  },
-  {
-    title: "Ambassadeur Promotion UniLaSalle",
-    type: "achievement",
-    category: "leadership",
-    date: "2024",
-    description: "Reconnaissance en tant qu'ambassadeur de promotion pour l'engagement étudiant et la réalisation de projets innovants.",
-    link: null,
-    image: "/images/achievements/ambassador.png",
-    icon: "medal",
-    tags: ["Leadership", "Student Engagement", "Project Management"],
-    technologies: []
-  },
 
   // Challenges & Compétitions
   {
@@ -163,11 +99,8 @@ const totalPages = Math.ceil(achievements.length / achievementsPerPage);
         <button onclick="filterAchievements('dashboard')" class="filter-btn px-6 py-3 rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 font-medium transition-all hover:bg-green-500 hover:text-white">
           Dashboards
         </button>
-        <button onclick="filterAchievements('report')" class="filter-btn px-6 py-3 rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 font-medium transition-all hover:bg-green-500 hover:text-white">
-          Rapports
-        </button>
-        <button onclick="filterAchievements('achievement')" class="filter-btn px-6 py-3 rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 font-medium transition-all hover:bg-green-500 hover:text-white">
-          Récompenses
+        <button onclick="filterAchievements('competition')" class="filter-btn px-6 py-3 rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 font-medium transition-all hover:bg-green-500 hover:text-white">
+          Challenges
         </button>
       </div>
     </section>
@@ -282,22 +215,18 @@ const totalPages = Math.ceil(achievements.length / achievementsPerPage);
         Résumé des Réalisations
       </h2>
       
-      <div class="grid md:grid-cols-4 gap-6">
+      <div class="grid md:grid-cols-3 gap-6">
         <div class="stat-card bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg p-6 text-center text-white">
           <div class="text-3xl font-bold mb-2">2</div>
           <div class="text-sm opacity-90">Publications</div>
         </div>
         <div class="stat-card bg-gradient-to-br from-green-500 to-green-600 rounded-lg p-6 text-center text-white">
-          <div class="text-3xl font-bold mb-2">2</div>
+          <div class="text-3xl font-bold mb-2">1</div>
           <div class="text-sm opacity-90">Dashboards</div>
         </div>
-        <div class="stat-card bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg p-6 text-center text-white">
-          <div class="text-3xl font-bold mb-2">2</div>
-          <div class="text-sm opacity-90">Rapports</div>
-        </div>
         <div class="stat-card bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg p-6 text-center text-white">
-          <div class="text-3xl font-bold mb-2">4</div>
-          <div class="text-sm opacity-90">Récompenses</div>
+          <div class="text-3xl font-bold mb-2">2</div>
+          <div class="text-sm opacity-90">Challenges</div>
         </div>
       </div>
     </section>

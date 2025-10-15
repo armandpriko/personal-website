@@ -41,43 +41,6 @@ const certifications = [
     credentialUrl: null
   },
   
-  // Microsoft & Azure
-  {
-    title: "Microsoft Certified: Azure Data Engineer Associate (DP-203)",
-    issuer: "Microsoft",
-    date: "Septembre 2023",
-    icon: "cloud",
-    description: "Certification Microsoft Azure pour les ingénieurs de données, couvrant la conception et l'implémentation de solutions de données sur Azure.",
-    pdfUrl: null,
-    imageUrl: null,
-    rank: null,
-    score: null,
-    challenge: null,
-    question: null,
-    skills: ["Azure Data Factory", "Azure Databricks", "Azure Synapse", "Data Engineering"],
-    prize: null,
-    category: "microsoft",
-    credentialId: null,
-    credentialUrl: null
-  },
-  {
-    title: "Microsoft Certified: Azure Data Scientist Associate (DP-100)",
-    issuer: "Microsoft",
-    date: "Août 2023",
-    icon: "brain",
-    description: "Certification Microsoft Azure pour les data scientists, couvrant l'utilisation d'Azure Machine Learning et des services d'IA.",
-    pdfUrl: null,
-    imageUrl: null,
-    rank: null,
-    score: null,
-    challenge: null,
-    question: null,
-    skills: ["Azure ML", "Machine Learning", "Data Science", "AI"],
-    prize: null,
-    category: "microsoft",
-    credentialId: null,
-    credentialUrl: null
-  },
 
   // Google & Cloud
   {
@@ -340,8 +303,8 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
               ))}
             </div>
           )}
-        </div>
-      ))}
+          </div>
+        ))}
     </section>
 
     <!-- Skills Summary -->
