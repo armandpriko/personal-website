@@ -49,8 +49,8 @@ const certifications = [
     date: "Août 2023",
     icon: "chart-bar",
     description: "Certification professionnelle Google en analyse de données, couvrant les outils et techniques d'analyse de données.",
-    pdfUrl: null,
-    imageUrl: null,
+    pdfUrl: "/certificates/google-data-analysis-certificate.pdf",
+    imageUrl: "/images/certificates/google-data-analysis-certificate.png",
     rank: null,
     score: null,
     challenge: null,
@@ -87,8 +87,8 @@ const certifications = [
     date: "Août 2024",
     icon: "chart-line",
     description: "Certification IBM en programmation R pour la science des données, couvrant les concepts essentiels de R et son application en data science.",
-    pdfUrl: null,
-    imageUrl: null,
+    pdfUrl: "/certificates/ibm-r-programming-certificate.pdf",
+    imageUrl: "/images/certificates/ibm-r-programming-certificate.png",
     rank: null,
     score: null,
     challenge: null,
@@ -107,8 +107,8 @@ const certifications = [
     date: "Décembre 2023",
     icon: "robot",
     description: "Nanodegree Udacity en programmation IA avec Python, couvrant les algorithmes d'intelligence artificielle et de machine learning.",
-    pdfUrl: null,
-    imageUrl: null,
+    pdfUrl: "/certificates/udacity-ai-programming-certificate.pdf",
+    imageUrl: "/images/certificates/udacity-ai-programming-certificate.png",
     rank: null,
     score: null,
     challenge: null,
@@ -278,13 +278,22 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
               <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
                 Certifié
               </span>
-              {cert.pdfUrl && (
-                <button onclick={`openPDFViewer('${cert.pdfUrl}', '${cert.title}')`} 
-                        class="mt-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center">
-                  <i class="ph ph-eye mr-2"></i>
-                  Voir le certificat
-                </button>
-              )}
+              <div class="flex flex-col gap-2">
+                {cert.imageUrl && (
+                  <button onclick={`openImageViewer('${cert.imageUrl}', '${cert.title}')`} 
+                          class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center">
+                    <i class="ph ph-image mr-2"></i>
+                    Voir l'image
+                  </button>
+                )}
+                {cert.pdfUrl && (
+                  <button onclick={`openPDFViewer('${cert.pdfUrl}', '${cert.title}')`} 
+                          class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center">
+                    <i class="ph ph-eye mr-2"></i>
+                    Voir le PDF
+                  </button>
+                )}
+              </div>
             </div>
           </div>
 
@@ -399,6 +408,35 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
       observer.observe(card);
     });
   });
+
+  // Image Viewer Functions
+  function openImageViewer(imageUrl, title) {
+    const modal = document.getElementById('pdfModal');
+    const titleElement = document.getElementById('pdfModalTitle');
+    const container = document.getElementById('pdfContainer');
+    
+    titleElement.textContent = title;
+    
+    // Create image viewer
+    container.innerHTML = `
+      <div class="w-full h-full relative">
+        <img src="${imageUrl}" alt="${title}" class="w-full h-full object-contain rounded-lg">
+        
+        <!-- Overlay to prevent interaction -->
+        <div class="absolute inset-0 bg-transparent" 
+             oncontextmenu="return false;"
+             onselectstart="return false;"
+             ondragstart="return false;">
+        </div>
+      </div>
+    `;
+    
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    
+    // Disable right-click, copy, print, etc.
+    disablePDFInteractions();
+  }
 
   // PDF Viewer Functions
   function openPDFViewer(pdfUrl, title) {
