@@ -68,7 +68,7 @@ const certifications = [
     icon: "cloud-check",
     description: "Certification Google Cloud pour les leaders numériques, couvrant les concepts fondamentaux du cloud computing.",
     pdfUrl: null,
-    imageUrl: "/images/certificates/google-cloud-certificate.png",
+    imageUrl: "/images/certificates/google cloud.pdf",
     rank: null,
     score: null,
     challenge: null,
@@ -88,7 +88,7 @@ const certifications = [
     icon: "chart-line",
     description: "Certification IBM en programmation R pour la science des données, couvrant les concepts essentiels de R et son application en data science.",
     pdfUrl: null,
-    imageUrl: "/images/certificates/ibm-r-programming-certificate.png",
+    imageUrl: "/images/certificates/bm-r-programming-certificate.png",
     rank: null,
     score: null,
     challenge: null,
@@ -127,7 +127,7 @@ const certifications = [
     date: "Février 2024",
     icon: "leaf",
     description: "Certification DroneDeploy pour analyste agronome, couvrant l'analyse de données agricoles et la télédétection.",
-    pdfUrl: "/certificates/dronedeploy-certificate.pdf",
+    pdfUrl: "/images/certificates/dronedeploy.pdf",
     imageUrl: null,
     rank: null,
     score: null,
@@ -147,7 +147,7 @@ const certifications = [
     date: "Mai 2023",
     icon: "drone",
     description: "Certification européenne pour le pilotage de drones civils dans les catégories A1, A2 et A3, autorisant les vols en agglomération et hors agglomération. Expire en décembre 2025.",
-    pdfUrl: "/certificates/easa-drone-certificate.pdf",
+    pdfUrl: "/images/certificates/attestation_formation.pdf",
     imageUrl: null,
     rank: null,
     score: null,
@@ -205,7 +205,7 @@ const certifications = [
     date: "Février 2023 - Juillet 2023",
     icon: "tree",
     description: "Formation spécialisée en conservation de la biodiversité et gestion des aires protégées, avec mention. Programme de 15 ECTS couvrant les aspects écologiques, sociaux et économiques de la conservation.",
-    pdfUrl: "/certificates/conservation-protected-areas-certificate.pdf",
+    pdfUrl: "/images/certificates/aireproconservation.pdf",
     imageUrl: null,
     rank: null,
     score: null,
@@ -224,9 +224,9 @@ const certifications = [
     title: "CLIMATE CHANGE NEGOTIATIONS FOR YOUNG AFRICAN NEGOTIATORS",
     issuer: "IDEP CEA",
     date: "Août 2022",
-    icon: "climat",
+    icon: "tree",
     description: "Formation spécialisée destinée au renforcement des capacités des jeunes négociateurs africains dans le cadre de la CCNUCC. Programme axé sur les négociations climatiques internationales, visant à développer une compréhension approfondie des mécanismes de négociation, des actions climatiques ambitieuses, de l'adaptation et de la mise en œuvre des politiques climatiques, incluant la gestion des pertes et dommages.",
-    pdfUrl: "/Users/armandkoumi/projects/personal-website/public/images/certificates/climateNegotiator.pdf",
+    pdfUrl: "/images/certificates/climateNegotiator.pdf",
     imageUrl: null,
     rank: null,
     score: null,
@@ -301,14 +301,14 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
               </span>
               <div class="flex flex-col gap-2">
                 {cert.imageUrl && (
-                  <button onclick={`openImageViewer('${cert.imageUrl}', '${cert.title}')`} 
+                  <button onclick={`openImageViewer('${cert.imageUrl}', '${cert.title.replace(/'/g, "\\'")}')`} 
                           class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center">
                     <i class="ph ph-image mr-2"></i>
                     Voir l'image
                   </button>
                 )}
                 {cert.pdfUrl && (
-                  <button onclick={`openPDFViewer('${cert.pdfUrl}', '${cert.title}')`} 
+                  <button onclick={`openPDFViewer('${cert.pdfUrl}', '${cert.title.replace(/'/g, "\\'")}')`} 
                           class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center">
                     <i class="ph ph-eye mr-2"></i>
                     Voir le PDF
