@@ -4,6 +4,58 @@ import '@phosphor-icons/web/regular/style.css';
 
 const projects = [
   {
+    title: "Microsoft Learn Location Mention Recognition Challenge",
+    description: "Développement d'un système de reconnaissance automatique de mentions de lieux dans les posts de microblogging lors d'urgences. Challenge organisé par Microsoft et HBKU pour améliorer la réponse aux catastrophes naturelles.",
+    longDescription: "Participation au challenge Microsoft Learn Location Mention Recognition organisé par Microsoft et HBKU. L'objectif était de développer un système automatique pour extraire et classifier les mentions de lieux (toponymes) dans les posts de microblogging (X/Twitter) lors d'urgences. Le système utilise des techniques de Natural Language Processing et de Machine Learning pour identifier les lieux mentionnés et les classifier par type (pays, état, ville, etc.).",
+    technologies: ["Python", "Natural Language Processing", "Machine Learning", "LLMs", "Location Recognition", "Disaster Response"],
+    icon: "map-pin",
+    category: "Machine Learning",
+    status: "Completed",
+    year: "2024",
+    githubLink: "#",
+    demoLink: "#",
+    image: "/images/projects/zindi-location-recognition.jpg",
+    features: [
+      "Reconnaissance automatique de mentions de lieux",
+      "Classification par type de lieu (pays, état, ville)",
+      "Traitement en temps réel des posts de microblogging",
+      "Optimisation pour la réponse aux urgences",
+      "Métrique Word Error Rate (WER) < 0.3"
+    ],
+    metrics: {
+      rank: "77/320 (Top 25%)",
+      score: "77/300",
+      prize: "$5,000 USD pool",
+      certification: "Microsoft Certified"
+    }
+  },
+  {
+    title: "Togo Fiber Optics Uptake Prediction Challenge",
+    description: "Développement d'un modèle de machine learning pour prédire l'adoption de la fibre optique par les ménages et entreprises au Togo. Challenge organisé par le Ministère de l'Économie Numérique du Togo.",
+    longDescription: "Participation au challenge Togo Fiber Optics Uptake Prediction organisé par le Ministère de l'Économie Numérique et de la Transformation du Togo. L'objectif était de développer un modèle prédictif pour identifier quels ménages et entreprises adopteraient l'accès à la fibre optique, en utilisant des données socio-démographiques et géographiques. Le projet vise à aider le gouvernement à améliorer la connectivité et réduire la fracture numérique.",
+    technologies: ["Python", "Machine Learning", "Prediction Models", "Socio-demographic Analysis", "Geographic Data", "Feature Engineering"],
+    icon: "wifi-high",
+    category: "Data Science",
+    status: "Completed",
+    year: "2024",
+    githubLink: "#",
+    demoLink: "#",
+    image: "/images/projects/zindi-fiber-optics.jpg",
+    features: [
+      "Modèles prédictifs d'adoption de la fibre optique",
+      "Analyse socio-démographique et géographique",
+      "Optimisation des politiques publiques",
+      "Réduction de la fracture numérique",
+      "Métrique AUC (Area Under Curve) > 0.85"
+    ],
+    metrics: {
+      rank: "30/93 (Top 50%)",
+      score: "30/90",
+      prize: "3,000,000 XOF pool",
+      impact: "Politiques publiques Togo"
+    }
+  },
+  {
     title: "Community Deforestation Tracker (CDT)",
     description: "Nouvelle version du Community Deforestation Tracker utilisant l'imagerie satellite et le machine learning pour la détection de déforestation dans le Bassin du Congo. Développement d'algorithmes de deep learning pour l'analyse en temps réel des images Sentinel.",
     longDescription: "Projet développé chez Omdena en tant qu'Ingénieur Machine Learning Junior. Le CDT utilise des techniques avancées de computer vision et de deep learning pour analyser les images satellites Sentinel-2 et détecter les changements de couverture forestière en temps quasi-réel. Le système intègre des modèles de détection d'objets et de segmentation sémantique pour identifier les zones de déforestation avec une précision élevée.",
@@ -12,7 +64,7 @@ const projects = [
     category: "Machine Learning & Remote Sensing",
     status: "Completed",
     year: "2023-2024",
-    githubLink: "https://github.com/armandkoumi/deforestation-tracker",
+  
     demoLink: "#",
     image: "/images/projects/cdt-preview.jpg",
     features: [
@@ -49,7 +101,7 @@ const projects = [
     ],
     metrics: {
       models: "3 modèles intégrés",
-      accuracy: "NSE > 0.7",
+      accuracy: "R-square > 0.65",
       coverage: "Méditerranée"
     }
   },
@@ -102,7 +154,9 @@ const projects = [
       storage: "10+ TB",
       users: "100+ chercheurs"
     }
-  }
+  },
+
+  
 ];
 ---
 
@@ -177,9 +231,9 @@ const projects = [
               <div class="flex flex-wrap gap-2">
                 {project.technologies.slice(0, 6).map(tech => (
                   <span class="bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 px-2 py-1 rounded-full text-xs">
-                    {tech}
-                  </span>
-                ))}
+                  {tech}
+                </span>
+              ))}
                 {project.technologies.length > 6 && (
                   <span class="text-xs text-neutral-500">+{project.technologies.length - 6} autres</span>
                 )}
@@ -213,9 +267,9 @@ const projects = [
                 </a>
               )}
             </div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
     </section>
   </main>
 
