@@ -126,8 +126,31 @@ const { title, description = 'Portfolio de Dzudzogbe Prince Armand Koumi' } = As
         display: none !important;
       }
       
+      body > .skiptranslate {
+        display: none !important;
+      }
+      
+      .goog-te-banner-frame {
+        display: none !important;
+      }
+      
       body {
         top: 0 !important;
+      }
+      
+      /* Hide any Google Translate top bar */
+      iframe[src*="translate.googleapis.com"] {
+        display: none !important;
+      }
+      
+      /* Hide Google Translate banner completely */
+      .goog-te-banner-frame.skiptranslate,
+      .goog-te-banner-frame,
+      body > .skiptranslate {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        overflow: hidden !important;
       }
       
       /* Hide Google branding completely */
@@ -454,12 +477,31 @@ const { title, description = 'Portfolio de Dzudzogbe Prince Armand Koumi' } = As
 
         // Hide Google Translate banner completely
         const hideGoogleBanner = () => {
-          // Remove Google Translate banner
-          const banner = document.querySelector('.goog-te-banner-frame');
-          if (banner) {
-            banner.style.display = 'none';
-            banner.remove();
-          }
+          // Remove all possible Google Translate banners
+          const banners = [
+            '.goog-te-banner-frame',
+            '.skiptranslate',
+            'body > .skiptranslate',
+            '.goog-te-banner-frame.skiptranslate'
+          ];
+          
+          banners.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(el => {
+              el.style.display = 'none';
+              el.style.visibility = 'hidden';
+              el.style.height = '0';
+              el.style.overflow = 'hidden';
+              el.remove();
+            });
+          });
+          
+          // Remove any iframes from Google Translate
+          const iframes = document.querySelectorAll('iframe[src*="translate.googleapis.com"]');
+          iframes.forEach(iframe => {
+            iframe.style.display = 'none';
+            iframe.remove();
+          });
           
           // Remove top margin/padding added by Google Translate
           document.body.style.top = '0';
