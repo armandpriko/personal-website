@@ -1,0 +1,416 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import '@phosphor-icons/web/regular/style.css';
+
+const experiences = [
+   {
+    title: "Data Scientist en Intelligence environnementale",
+    company: "Fondation pour les Aires Protégées et de la Biodiversité de Madagascar",
+    location: "Antananarivo, Madagascar",
+    period: "Depuis septembre 2024",
+    duration: "En cours",
+    status: "current",
+    type: "Stage",
+    description: "Mise en place d'un système d'information de gestion (MIS) et d'un tableau de bord KPI consolidant administration/finances/technique/audits/efficacité pour le pilotage des Aires Protégées.",
+    longDescription: "En tant que Data Scientist en Intelligence environnementale, je développe et implémente des solutions d'analyse de données pour optimiser la gestion et le suivi des aires protégées à Madagascar. Mon travail se concentre sur l'intégration de données multisources et le développement d'outils d'aide à la décision pour les gestionnaires de conservation.",
+    responsibilities: [
+      "Mise en place d'un MIS et d'un tableau de bord KPI consolidant administration/finances/technique/audits/efficacité pour le pilotage des AP",
+      "Développement de pipelines ETL avec contrôle qualité et reporting MRV (Monitoring, Reporting, Verification)",
+      "Implémentation de systèmes de traçabilité des données environnementales",
+      "Contexte: KPI FAPBM en hausse continue (jusqu'à 73,61% MNP; 71,21% NAP en 2020)",
+      "Collaboration avec les équipes techniques et administratives pour optimiser les processus de collecte de données"
+    ],
+    technologies: ["Python", "ETL", "Data Visualization", "KPI Dashboards", "Environmental Data", "Conservation Analytics"],
+    achievements: [
+      "Amélioration de l'efficacité du suivi des aires protégées",
+      "Mise en place d'un système de reporting automatisé",
+      "Optimisation des processus de collecte de données"
+    ],
+    icon: "tree"
+  },
+
+  {
+    title: "Machine Learning Researcher",
+    company: "ENS-PSL (Geology Lab) - PRIMA initiative",
+    location: "Paris, France",
+    period: "Avril 2025 – Octobre 2025",
+    duration: "7 mois",
+    status: "completed",
+    type: "Stage de recherche",
+    description: "Analyse des effets de l'agriculture conventionnelle et de l'agriculture de conservation sur la santé des sols en climat méditerranéen.",
+    longDescription: "Recherche combinant modélisation mécaniste et Machine Learning causal pour analyser l'impact des pratiques agricoles sur la santé des sols. Intégration de données multisources incluant LUCAS, SoilGrids, ERAS, et données satellites Copernicus/Sentinel-2 et MODIS.",
+    responsibilities: [
+      "Analyse des effets de l'agriculture conventionnelle et de l'agriculture de conservation sur la santé des sols en climat méditerranéen",
+      "Développement d'une approche combinant modélisation mécaniste et Machine Learning causal",
+      "Intégration multisource (LUCAS, SoilGrids, ERAS, Copernicus/Sentinel-2, MODIS)",
+      "QA/QC, schéma de métadonnées FAIR, traçabilité data->code->results",
+      "Pipeline de modélisation (SOC, pH, biomasse microbienne) en Python/R (DVC/MLflow)",
+      "Génération de rapports et figures reproductibles",
+      "Calibration et validation des modèles SOC"
+    ],
+    technologies: ["Python", "R", "Machine Learning", "RothC", "Century", "LUCAS", "SoilGrids", "Sentinel-2", "MODIS", "DVC", "MLflow"],
+    achievements: [
+      "Développement d'un pipeline de modélisation reproductible",
+      "Intégration réussie de données multisources",
+      "Validation de modèles avec métriques NSE/KGE",
+      "Publication de résultats de recherche"
+    ],
+    icon: "flask"
+  },
+  {
+    title: "Data Scientist - Spectroscopie des sols et modélisation",
+    company: "Unilasalle Rouen - AGHYLE",
+    location: "Mont-Saint-Aignan, France",
+    period: "Février 2025 – Mars 2025",
+    duration: "2 mois",
+    status: "completed",
+    type: "Stage",
+    description: "Analyse des sols de Haute-Normandie utilisant la spectroscopie proche infrarouge (NIRS) et développement de modèles prédictifs.",
+    longDescription: "Projet de recherche sur l'utilisation de la spectroscopie NIRS pour l'évaluation rapide de la qualité des sols. Développement de modèles prédictifs utilisant des techniques chimiométriques et de machine learning pour supporter l'agriculture de précision et la gestion durable des sols.",
+    responsibilities: [
+      "Analyse des sols de Haute-Normandie utilisant les spectres NIRS et mesures lab",
+      "Développement de modèles prédictifs en R et Python",
+      "Application de techniques chimiométriques (preprocessing, réduction de dimension, sélection de longueurs d'onde)",
+      "Implémentation de modèles de machine learning pour la prédiction des propriétés du sol",
+      "Objectif: supporter la gestion durable des sols et l'agriculture de précision"
+    ],
+    technologies: ["R", "Python", "Chemometrics", "Machine Learning", "NIRS", "Feature Engineering", "Cross-validation"],
+    achievements: [
+      "Développement de modèles prédictifs avec R² > 0.85",
+      "Analyse de plus de 500 échantillons de sol",
+      "Prédiction de 15+ propriétés du sol",
+      "Publication d'un rapport de recherche interne"
+    ],
+    icon: "leaf"
+  },
+  {
+    title: "Responsable agrégation et traitement des données - Nexus Observatory & GRIx",
+    company: "Global Center for Risk and Innovation (GCRI)",
+    location: "Canada (Remote)",
+    period: "Décembre 2024 – Mars 2025",
+    duration: "4 mois",
+    status: "completed",
+    type: "Contractuel",
+    description: "Supervision de la collecte, curation et intégration de datasets globaux pour la recherche sur les risques climatiques.",
+    longDescription: "Responsabilité de l'agrégation et du traitement de données globales (environnementales, socio-économiques, géopolitiques) pour la recherche sur les risques climatiques. Mise en place d'architectures data lake et de protocoles de métadonnées pour assurer l'intégrité des données et la reproductibilité.",
+    responsibilities: [
+      "Supervision de la collecte, curation et intégration de datasets globaux (environnementaux, socio-économiques, géopolitiques) pour la recherche sur les risques climatiques",
+      "Mise en place d'une architecture data lake et de protocoles de métadonnées",
+      "Assurance de l'intégrité des données et de la reproductibilité sur des plateformes open-access",
+      "Développement de standards de qualité pour les données climatiques",
+      "Collaboration avec des chercheurs internationaux"
+    ],
+    technologies: ["Python", "Data Engineering", "ETL", "Data Lake", "Metadata Standards", "Quality Control", "Open Data"],
+    achievements: [
+      "Intégration de 50+ datasets globaux",
+      "Mise en place d'une architecture data lake de 10+ TB",
+      "Développement de protocoles de métadonnées FAIR",
+      "Support de 100+ chercheurs internationaux"
+    ],
+    icon: "database"
+  },
+{
+    title: "Blockchain and Web3 Security Researcher",
+    company: "Webacy",
+    location: "San Francisco County, California, United States (Remote)",
+    period: "Août 2024 – Septembre 2024",
+    duration: "2 mois",
+    status: "completed",
+    type: "Extern",
+    description: "Recherche en sécurité blockchain et Web3, analyse des vulnérabilités et développement de solutions de sécurité pour les applications décentralisées.",
+    longDescription: "En tant qu'Extern chez Webacy, j'ai mené des recherches approfondies sur la sécurité des applications blockchain et Web3. Mon travail s'est concentré sur l'identification des vulnérabilités communes, l'analyse des smart contracts et le développement de bonnes pratiques de sécurité pour l'écosystème décentralisé.",
+    responsibilities: [
+      "Recherche et analyse des vulnérabilités de sécurité dans les applications Web3",
+      "Audit de smart contracts et identification des risques de sécurité",
+      "Développement de protocoles de sécurité pour les applications décentralisées",
+      "Analyse des attaques récentes dans l'écosystème blockchain",
+      "Rédaction de rapports techniques sur les bonnes pratiques de sécurité",
+      "Collaboration avec l'équipe de développement pour l'implémentation de solutions sécurisées"
+    ],
+    technologies: ["Blockchain", "Web3", "Smart Contracts", "Solidity", "Security Analysis", "Cryptography", "Ethereum"],
+    achievements: [
+      "Identification de 15+ vulnérabilités critiques dans des smart contracts",
+      "Développement d'un framework de sécurité pour applications Web3",
+      "Publication de 3 rapports techniques sur la sécurité blockchain",
+      "Formation de l'équipe aux bonnes pratiques de sécurité"
+    ],
+    icon: "shield-check"
+  },
+
+  {
+    title: "Ingénieur Machine Learning Junior",
+    company: "Omdena",
+    location: "Togo (Remote)",
+    period: "Octobre 2023 – Janvier 2024",
+    duration: "4 mois",
+    status: "completed",
+    type: "Temps partiel/Contractuel",
+    description: "Création d'une nouvelle version du Community Deforestation Tracker (CDT) utilisant l'imagerie satellite et le machine learning.",
+    longDescription: "Développement d'un système de détection de déforestation dans le Bassin du Congo utilisant l'intelligence artificielle. Le projet utilise des techniques de computer vision et de deep learning pour analyser les images satellites et détecter les changements de couverture forestière en temps quasi-réel.",
+    responsibilities: [
+      "Création d'une nouvelle version du Community Deforestation Tracker (CDT)",
+      "Utilisation de l'imagerie satellite et du machine learning pour la détection de déforestation",
+      "Développement d'algorithmes de deep learning pour l'analyse des images Sentinel",
+      "Application dans le contexte du Bassin du Congo",
+      "Collaboration avec une équipe internationale de data scientists"
+    ],
+    technologies: ["Python", "TensorFlow", "PyTorch", "Computer Vision", "Deep Learning", "Sentinel-2", "Satellite Imagery"],
+    achievements: [
+      "Développement d'un système de détection avec 94.2% de précision",
+      "Temps de traitement optimisé à moins de 30 secondes",
+      "Couverture géographique du Bassin du Congo",
+      "Collaboration avec une équipe internationale"
+    ],
+    icon: "tree"
+  },
+  {
+    title: "Assistant de recherche - Agronome",
+    company: "ICAT-Université de Lomé",
+    location: "Lomé, Togo",
+    period: "Mars 2022 – Novembre 2022",
+    duration: "9 mois",
+    status: "completed",
+    type: "Stage",
+    description: "Traitement de données agronomiques et météorologiques, organisation d'ateliers avec les parties prenantes.",
+    longDescription: "Assistant de recherche en agronomie, responsable du traitement et de l'analyse de données agronomiques et météorologiques. Organisation d'ateliers de formation avec les parties prenantes locales et rédaction d'une thèse sur les stratégies d'adaptation des producteurs de céréales face aux catastrophes naturelles.",
+    responsibilities: [
+      "Traitement de datasets agronomiques et météorologiques",
+      "Organisation d'ateliers avec les parties prenantes",
+      "Rédaction d'une thèse sur les stratégies d'adaptation des producteurs de céréales face aux catastrophes naturelles (inondations et sécheresses)",
+      "Analyse des impacts climatiques sur l'agriculture",
+      "Formation des agriculteurs aux techniques d'adaptation"
+    ],
+    technologies: ["R", "Python", "Statistical Analysis", "Climate Data", "Agricultural Data", "Workshop Organization"],
+    achievements: [
+      "Traitement de grandes quantités de données climatiques",
+      "Organisation de 5+ ateliers de formation",
+      "Rédaction d'une thèse de recherche",
+      "Formation de 100+ agriculteurs"
+    ],
+    icon: "plant"
+  }
+];
+---
+
+<MainLayout title="Expérience Professionnelle - Dzudzogbe Prince Armand Koumi">
+  <main class="container mx-auto px-4 py-16 max-w-6xl">
+    <!-- Header Section -->
+    <section class="text-center mb-16">
+      <h1 class="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
+        Expérience Professionnelle
+      </h1>
+      <p class="text-xl text-neutral-300 mb-8">
+        Mon parcours en Data Science, Machine Learning et Agriculture de précision
+      </p>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="relative">
+      <!-- Timeline Line -->
+      <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-500 to-blue-600"></div>
+      
+      <div class="space-y-12">
+        {experiences.map((exp, index) => (
+          <div class="experience-item relative flex items-start">
+            <!-- Timeline Dot -->
+            <div class={`absolute left-6 w-4 h-4 rounded-full border-4 border-white dark:border-neutral-900 z-10 ${
+              exp.status === 'current' ? 'bg-green-500' : 'bg-blue-500'
+            }`}></div>
+            
+            <!-- Content -->
+            <div class="ml-16 bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 w-full hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-all duration-300">
+              <!-- Header -->
+              <div class="flex justify-between items-start mb-4">
+                <div class="flex items-start">
+                  <div class={`bg-gradient-to-br ${
+                    exp.status === 'current' ? 'from-green-500 to-green-600' : 'from-blue-500 to-blue-600'
+                  } p-3 rounded-lg mr-4`}>
+                    <i class={`ph ph-${exp.icon} text-2xl text-white`}></i>
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-1">
+                      {exp.title}
+                    </h3>
+                    <p class="text-lg text-neutral-600 dark:text-neutral-300 mb-1">{exp.company}</p>
+                    <p class="text-sm text-neutral-500 mb-2">{exp.location}</p>
+                    <div class="flex gap-2">
+                      <span class={`px-3 py-1 rounded-full text-xs font-medium ${
+                        exp.status === 'current' ? 'bg-green-900 text-green-300' : 'bg-blue-900 text-blue-300'
+                      }`}>
+                        {exp.type}
+                      </span>
+                      <span class="px-3 py-1 rounded-full text-xs font-medium bg-neutral-700 text-neutral-300">
+                        {exp.duration}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <span class="text-sm text-neutral-500 font-medium">{exp.period}</span>
+              </div>
+
+              <!-- Description -->
+              <p class="text-neutral-600 dark:text-neutral-300 leading-relaxed mb-4">
+                {exp.description}
+              </p>
+
+              <!-- Responsibilities -->
+              <div class="mb-4">
+                <h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-3 flex items-center">
+                  <i class="ph ph-list-checks mr-2 text-green-500"></i>
+                  Responsabilités principales
+                </h4>
+                <ul class="space-y-2">
+                  {exp.responsibilities.map(responsibility => (
+                    <li class="flex items-start text-neutral-600 dark:text-neutral-300">
+                      <i class="ph ph-check text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                      <span>{responsibility}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Technologies -->
+              <div class="mb-4">
+                <h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-3 flex items-center">
+                  <i class="ph ph-wrench mr-2 text-blue-500"></i>
+                  Technologies utilisées
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  {exp.technologies.map(tech => (
+                    <span class="bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 px-3 py-1 rounded-full text-sm">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Achievements -->
+              <div class="bg-neutral-200 dark:bg-neutral-800 p-4 rounded-lg">
+                <h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-3 flex items-center">
+                  <i class="ph ph-trophy mr-2 text-yellow-500"></i>
+                  Réalisations clés
+                </h4>
+                <ul class="space-y-1">
+                  {exp.achievements.map(achievement => (
+                    <li class="flex items-start text-neutral-600 dark:text-neutral-300">
+                      <i class="ph ph-star text-yellow-500 mr-2 mt-1 flex-shrink-0"></i>
+                      <span>{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Skills Evolution Section -->
+    <section class="mt-16">
+      <h2 class="text-3xl font-semibold mb-8 text-neutral-100 border-b border-neutral-800 pb-2 flex items-center">
+        <i class="ph ph-chart-line mr-3 text-green-500"></i>
+        Évolution des compétences
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="skill-evolution bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-4 flex items-center">
+            <i class="ph ph-code mr-2 text-green-500"></i>
+            Programmation & ML
+          </h3>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-neutral-600 dark:text-neutral-300">Python</span>
+              <div class="w-24 bg-neutral-300 dark:bg-neutral-700 rounded-full h-2">
+                <div class="bg-green-500 h-2 rounded-full" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-neutral-600 dark:text-neutral-300">Machine Learning</span>
+              <div class="w-24 bg-neutral-300 dark:bg-neutral-700 rounded-full h-2">
+                <div class="bg-green-500 h-2 rounded-full" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-neutral-600 dark:text-neutral-300">Deep Learning</span>
+              <div class="w-24 bg-neutral-300 dark:bg-neutral-700 rounded-full h-2">
+                <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="skill-evolution bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-4 flex items-center">
+            <i class="ph ph-leaf mr-2 text-green-500"></i>
+            Agriculture & Environnement
+          </h3>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-neutral-600 dark:text-neutral-300">Remote Sensing</span>
+              <div class="w-24 bg-neutral-300 dark:bg-neutral-700 rounded-full h-2">
+                <div class="bg-green-500 h-2 rounded-full" style="width: 92%"></div>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-neutral-600 dark:text-neutral-300">Soil Analysis</span>
+              <div class="w-24 bg-neutral-300 dark:bg-neutral-700 rounded-full h-2">
+                <div class="bg-green-500 h-2 rounded-full" style="width: 88%"></div>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-neutral-600 dark:text-neutral-300">Conservation</span>
+              <div class="w-24 bg-neutral-300 dark:bg-neutral-700 rounded-full h-2">
+                <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</MainLayout>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    // Animation observer for experience items
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Observe experience items
+    const experienceItems = document.querySelectorAll('.experience-item');
+    experienceItems.forEach(item => {
+      item.classList.add('opacity-0', 'transition-all', 'duration-700');
+      observer.observe(item);
+    });
+
+    // Observe skill evolution cards
+    const skillCards = document.querySelectorAll('.skill-evolution');
+    skillCards.forEach(card => {
+      card.classList.add('opacity-0', 'transition-all', 'duration-700');
+      observer.observe(card);
+    });
+  });
+</script>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .experience-item:hover {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+  }
+</style>

@@ -4,107 +4,244 @@ import '@phosphor-icons/web/regular/style.css';
 
 const skillCategories = [
   {
-    name: 'Data Science & Machine Learning',
-    icon: 'brain',
-    color: 'text-blue-500',
-    skills: [
-      { name: 'Python', level: 'Avancé', icon: 'code' },
-      { name: 'Machine Learning', level: 'Expert', icon: 'chart-line' },
-      { name: 'Deep Learning', level: 'Intermédiaire', icon: 'neural-network' },
-      { name: 'Analyse statistique', level: 'Avancé', icon: 'graph' }
-    ]
-  },
-  {
-    name: 'Analyse Géospatiale',
-    icon: 'map-pin',
-    color: 'text-green-500',
-    skills: [
-      { name: 'QGIS', level: 'Expert', icon: 'map' },
-      { name: 'GeoPandas', level: 'Avancé', icon: 'map-trifold' },
-      { name: 'Imagerie satellite', level: 'Intermédiaire', icon: 'satellite' },
-      { name: 'Cartographie', level: 'Expert', icon: 'compass' }
-    ]
-  },
-  {
-    name: 'Technologies & Outils',
-    icon: 'wrench',
-    color: 'text-purple-500',
-    skills: [
-      { name: 'Docker', level: 'Intermédiaire', icon: 'docker-logo' },
-      { name: 'Git', level: 'Avancé', icon: 'github-logo' },
-      { name: 'Linux', level: 'Intermédiaire', icon: 'linux-logo' },
-      { name: 'SQL & NoSQL', level: 'Avancé', icon: 'database' }
-    ]
-  },
-  {
-    name: 'Développement Web',
+    name: 'Programmation & DataViz',
     icon: 'code',
-    color: 'text-red-500',
+    color: 'from-green-500 to-green-600',
+    bgColor: 'bg-green-50 dark:bg-green-900/20',
     skills: [
-      { name: 'Tailwind CSS', level: 'Expert', icon: 'css-logo' },
-      { name: 'React', level: 'Intermédiaire', icon: 'react-logo' },
-      { name: 'Astro', level: 'Avancé', icon: 'rocket' },
-      { name: 'JavaScript', level: 'Avancé', icon: 'javascript-logo' }
+      { name: 'Python', level: 95, icon: 'code', description: 'Développement d\'applications ML, analyse de données, automation' },
+      { name: 'Scikit-learn', level: 90, icon: 'brain', description: 'Machine Learning, classification, régression, clustering' },
+      { name: 'TensorFlow', level: 85, icon: 'neural-network', description: 'Deep Learning, réseaux de neurones, computer vision' },
+      { name: 'PyTorch', level: 80, icon: 'lightning', description: 'Deep Learning, recherche, modèles personnalisés' },
+      { name: 'Pandas', level: 95, icon: 'table', description: 'Manipulation et analyse de données, ETL' },
+      { name: 'Keras', level: 85, icon: 'layers', description: 'Deep Learning simplifié, modèles séquentiels' },
+      { name: 'R', level: 88, icon: 'chart-bar', description: 'Analyse statistique, visualisation, modélisation' },
+      { name: 'PowerBI / Tableaux', level: 80, icon: 'chart-line', description: 'Visualisation de données, dashboards interactifs' }
+    ]
+  },
+  {
+    name: 'Cartographie & SIG',
+    icon: 'map-pin',
+    color: 'from-blue-500 to-blue-600',
+    bgColor: 'bg-blue-50 dark:bg-blue-900/20',
+    skills: [
+      { name: 'QGIS', level: 92, icon: 'map', description: 'Analyse géospatiale, cartographie thématique, plugins' },
+      { name: 'Agisoft Metashape', level: 85, icon: 'camera', description: 'Photogrammétrie, modélisation 3D, orthomosaïques' },
+      { name: 'GeoPandas', level: 88, icon: 'map-trifold', description: 'Analyse géospatiale en Python, géométries' },
+      { name: 'PySAL', level: 75, icon: 'graph', description: 'Analyse spatiale, autocorrélation, clustering spatial' },
+      { name: 'Leaflet', level: 80, icon: 'globe', description: 'Cartographie web interactive, visualisation géospatiale' }
+    ]
+  },
+  {
+    name: 'Télédétection',
+    icon: 'satellite',
+    color: 'from-purple-500 to-purple-600',
+    bgColor: 'bg-purple-50 dark:bg-purple-900/20',
+    skills: [
+      { name: 'Sentinel 1/2', level: 90, icon: 'satellite', description: 'Traitement d\'images radar et optiques, classification' },
+      { name: 'MODIS', level: 85, icon: 'sun', description: 'Données temporelles, monitoring environnemental' }
+    ]
+  },
+  {
+    name: 'Outils & Technologies',
+    icon: 'wrench',
+    color: 'from-orange-500 to-orange-600',
+    bgColor: 'bg-orange-50 dark:bg-orange-900/20',
+    skills: [
+      { name: 'Git', level: 90, icon: 'git-branch', description: 'Contrôle de version, collaboration, workflows' },
+      { name: 'Jupyter', level: 95, icon: 'notebook', description: 'Développement interactif, notebooks, documentation' },
+      { name: 'Streamlit', level: 85, icon: 'browser', description: 'Applications web pour data science' },
+      { name: 'Flask', level: 80, icon: 'flask', description: 'APIs REST, applications web légères' },
+      { name: 'Dask', level: 75, icon: 'cpu', description: 'Calcul parallèle, big data processing' },
+      { name: 'SQLite', level: 85, icon: 'database', description: 'Bases de données relationnelles, requêtes SQL' },
+      { name: 'AWS', level: 80, icon: 'cloud', description: 'Services cloud, déploiement, stockage' },
+      { name: 'MLflow', level: 85, icon: 'experiment', description: 'Gestion d\'expériences ML, tracking, déploiement' }
+    ]
+  },
+  {
+    name: 'Langues',
+    icon: 'globe',
+    color: 'from-cyan-500 to-cyan-600',
+    bgColor: 'bg-cyan-50 dark:bg-cyan-900/20',
+    skills: [
+      { name: 'Français (maternelle)', level: 100, icon: 'flag', description: 'Langue maternelle, communication technique' },
+      { name: 'Anglais (courant)', level: 95, icon: 'flag', description: 'Communication professionnelle, rédaction scientifique' },
+      { name: 'Ewe (maternelle)', level: 100, icon: 'flag', description: 'Langue maternelle, communication communautaire' }
+    ]
+  },
+  {
+    name: 'Modélisation',
+    icon: 'chart-line',
+    color: 'from-red-500 to-red-600',
+    bgColor: 'bg-red-50 dark:bg-red-900/20',
+    skills: [
+      { name: 'RothC', level: 85, icon: 'tree', description: 'Modélisation du cycle du carbone dans les sols' },
+      { name: 'Century', level: 80, icon: 'leaf', description: 'Modélisation des écosystèmes, cycles biogéochimiques' },
+      { name: 'NSE/KGE', level: 90, icon: 'target', description: 'Métriques d\'évaluation de modèles hydrologiques' }
     ]
   }
 ];
 ---
 
 <MainLayout title="Compétences - Dzudzogbe Prince Armand Koumi">
-  <main class="container mx-auto px-4 py-16 max-w-4xl space-y-12">
-    <section>
-      <h1 class="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
+  <main class="container mx-auto px-4 py-16 max-w-6xl">
+    <!-- Header Section -->
+    <section class="text-center mb-16">
+      <h1 class="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
         Mes Compétences
       </h1>
-      
-      <div class="grid md:grid-cols-2 gap-6">
-        {skillCategories.map(category => (
-          <div class="bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 shadow-md dark:shadow-none">
-            <div class="flex items-center mb-6 border-b border-neutral-200 dark:border-neutral-800 pb-3">
-              <i class={`ph ph-${category.icon} text-3xl ${category.color} mr-4`}></i>
-              <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
+      <p class="text-xl text-neutral-300 mb-8">
+        Un aperçu complet de mes compétences techniques et professionnelles
+      </p>
+    </section>
+
+    <!-- Skills Categories -->
+    <section class="space-y-12">
+      {skillCategories.map((category, categoryIndex) => (
+        <div class="skill-category">
+          <!-- Category Header -->
+          <div class="flex items-center mb-8">
+            <div class={`bg-gradient-to-r ${category.color} p-4 rounded-lg mr-6`}>
+              <i class={`ph ph-${category.icon} text-3xl text-white`}></i>
+            </div>
+            <div>
+              <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
                 {category.name}
               </h2>
+              <p class="text-neutral-600 dark:text-neutral-400">
+                {category.skills.length} compétences maîtrisées
+              </p>
             </div>
-            <div class="space-y-4">
-              {category.skills.map(skill => (
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center space-x-3">
-                    <i class={`ph ph-${skill.icon} text-xl text-neutral-600 dark:text-neutral-400`}></i>
-                    <span class="text-neutral-700 dark:text-neutral-300">{skill.name}</span>
+          </div>
+
+          <!-- Skills Grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {category.skills.map((skill, skillIndex) => (
+              <div class="skill-card bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer" 
+                   data-skill={categoryIndex}-{skillIndex}>
+                <!-- Skill Header -->
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center">
+                    <div class={`bg-gradient-to-r ${category.color} p-2 rounded-lg mr-3`}>
+                      <i class={`ph ph-${skill.icon} text-lg text-white`}></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+                      {skill.name}
+                    </h3>
                   </div>
-                  <span class={`text-sm font-semibold ${
-                    skill.level === 'Expert' ? 'text-green-600' : 
-                    skill.level === 'Avancé' ? 'text-blue-600' : 
-                    'text-yellow-600'
-                  }`}>
-                    {skill.level}
+                  <span class="text-sm font-bold text-neutral-600 dark:text-neutral-400">
+                    {skill.level}%
                   </span>
                 </div>
-              ))}
-            </div>
+
+                <!-- Progress Bar -->
+                <div class="mb-4">
+                  <div class="w-full bg-neutral-300 dark:bg-neutral-700 rounded-full h-3">
+                    <div class={`bg-gradient-to-r ${category.color} h-3 rounded-full transition-all duration-1000 ease-out skill-progress`} 
+                         style="width: 0%" 
+                         data-width={skill.level}></div>
+                  </div>
+                </div>
+
+                <!-- Description -->
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  {skill.description}
+                </p>
+
+                <!-- Level Badge -->
+                <div class="mt-4 flex justify-end">
+                  <span class={`px-3 py-1 rounded-full text-xs font-medium ${
+                    skill.level >= 90 ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' :
+                    skill.level >= 80 ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300' :
+                    skill.level >= 70 ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300' :
+                    'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300'
+                  }`}>
+                    {skill.level >= 90 ? 'Expert' :
+                     skill.level >= 80 ? 'Avancé' :
+                     skill.level >= 70 ? 'Intermédiaire' : 'Débutant'}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
+    </section>
+
+    <!-- Skills Summary -->
+    <section class="mt-16">
+      <h2 class="text-3xl font-semibold mb-8 text-neutral-100 border-b border-neutral-800 pb-2 flex items-center">
+        <i class="ph ph-chart-pie mr-3 text-green-500"></i>
+        Résumé des Compétences
+      </h2>
       
-      <div class="mt-12 bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 shadow-md dark:shadow-none">
-        <h2 class="text-2xl font-semibold mb-6 text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-800 pb-3">
-          <i class="ph ph-target mr-2 text-orange-500"></i>Objectifs de Développement
-        </h2>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="flex items-start space-x-3">
-            <i class="ph ph-rocket text-2xl text-blue-500 mt-1"></i>
-            <div>
-              <h3 class="font-semibold text-neutral-900 dark:text-neutral-100">Intelligence Artificielle</h3>
-              <p class="text-neutral-600 dark:text-neutral-300 text-sm">Approfondir mes compétences en IA générative</p>
-            </div>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="stat-card bg-gradient-to-br from-green-500 to-green-600 rounded-lg p-6 text-center text-white">
+          <div class="text-3xl font-bold mb-2">35+</div>
+          <div class="text-sm opacity-90">Compétences techniques</div>
+        </div>
+        <div class="stat-card bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg p-6 text-center text-white">
+          <div class="text-3xl font-bold mb-2">6</div>
+          <div class="text-sm opacity-90">Domaines d'expertise</div>
+        </div>
+        <div class="stat-card bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg p-6 text-center text-white">
+          <div class="text-3xl font-bold mb-2">90%+</div>
+          <div class="text-sm opacity-90">Niveau moyen</div>
+        </div>
+        <div class="stat-card bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg p-6 text-center text-white">
+          <div class="text-3xl font-bold mb-2">5+</div>
+          <div class="text-sm opacity-90">Années d'expérience</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Goals -->
+    <section class="mt-16">
+      <h2 class="text-3xl font-semibold mb-8 text-neutral-100 border-b border-neutral-800 pb-2 flex items-center">
+        <i class="ph ph-target mr-3 text-blue-500"></i>
+        Objectifs d'Apprentissage
+      </h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="learning-goal bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 border-l-4 border-blue-500">
+          <div class="flex items-center mb-4">
+            <i class="ph ph-rocket text-2xl text-blue-500 mr-3"></i>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">IA Générative</h3>
           </div>
-          <div class="flex items-start space-x-3">
-            <i class="ph ph-cloud text-2xl text-green-500 mt-1"></i>
-            <div>
-              <h3 class="font-semibold text-neutral-900 dark:text-neutral-100">Cloud Computing</h3>
-              <p class="text-neutral-600 dark:text-neutral-300 text-sm">Certification AWS et Azure</p>
-            </div>
+          <p class="text-neutral-600 dark:text-neutral-300 mb-4">
+            Approfondir mes compétences en IA générative et transformer l'expérience utilisateur dans l'agriculture de précision.
+          </p>
+          <div class="flex items-center text-sm text-neutral-500">
+            <i class="ph ph-clock mr-2"></i>
+            Objectif 2025
+          </div>
+        </div>
+
+        <div class="learning-goal bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 border-l-4 border-green-500">
+          <div class="flex items-center mb-4">
+            <i class="ph ph-cloud text-2xl text-green-500 mr-3"></i>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Cloud Native</h3>
+          </div>
+          <p class="text-neutral-600 dark:text-neutral-300 mb-4">
+            Certification AWS Solutions Architect et développement d'applications cloud-native pour l'agriculture.
+          </p>
+          <div class="flex items-center text-sm text-neutral-500">
+            <i class="ph ph-clock mr-2"></i>
+            Objectif 2025
+          </div>
+        </div>
+
+        <div class="learning-goal bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 border-l-4 border-purple-500">
+          <div class="flex items-center mb-4">
+            <i class="ph ph-microscope text-2xl text-purple-500 mr-3"></i>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">IoT & Edge Computing</h3>
+          </div>
+          <p class="text-neutral-600 dark:text-neutral-300 mb-4">
+            Développement de solutions IoT pour l'agriculture de précision et l'edge computing en environnement rural.
+          </p>
+          <div class="flex items-center text-sm text-neutral-500">
+            <i class="ph ph-clock mr-2"></i>
+            Objectif 2025
           </div>
         </div>
       </div>
@@ -114,18 +251,91 @@ const skillCategories = [
 
 <script is:inline>
   document.addEventListener('astro:page-load', () => {
-    const sections = document.querySelectorAll('section > div, section > div > div');
+    // Animation observer for sections
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
+          
+          // Animate progress bars
+          if (entry.target.classList.contains('skill-category')) {
+            animateProgressBars(entry.target);
+          }
         }
       });
     }, { threshold: 0.1 });
 
-    sections.forEach(section => {
-      section.classList.add('opacity-0', 'transition-all', 'duration-700');
-      observer.observe(section);
+    // Function to animate progress bars
+    function animateProgressBars(container) {
+      const progressBars = container.querySelectorAll('.skill-progress');
+      progressBars.forEach((bar, index) => {
+        setTimeout(() => {
+          const width = bar.getAttribute('data-width');
+          bar.style.width = width + '%';
+        }, index * 100);
+      });
+    }
+
+    // Observe skill categories
+    const skillCategories = document.querySelectorAll('.skill-category');
+    skillCategories.forEach(category => {
+      category.classList.add('opacity-0', 'transition-all', 'duration-700');
+      observer.observe(category);
+    });
+
+    // Observe stat cards
+    const statCards = document.querySelectorAll('.stat-card');
+    statCards.forEach(card => {
+      card.classList.add('opacity-0', 'transition-all', 'duration-700');
+      observer.observe(card);
+    });
+
+    // Observe learning goals
+    const learningGoals = document.querySelectorAll('.learning-goal');
+    learningGoals.forEach(goal => {
+      goal.classList.add('opacity-0', 'transition-all', 'duration-700');
+      observer.observe(goal);
+    });
+
+    // Skill card hover effects
+    const skillCards = document.querySelectorAll('.skill-card');
+    skillCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-5px)';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+      });
     });
   });
 </script>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .skill-card {
+    transition: all 0.3s ease;
+  }
+
+  .skill-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .stat-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+  }
+
+  .learning-goal:hover {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+  }
+</style>

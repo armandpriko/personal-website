@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://armandkoumi.github.io/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow certain file types
+Disallow: *.json$
+Disallow: *.xml$
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Allow important pages
+Allow: /
+Allow: /experience/
+Allow: /projets/
+Allow: /achievements/
+Allow: /competences/
+Allow: /certifications/
+Allow: /contact/

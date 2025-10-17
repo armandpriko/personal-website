@@ -17,138 +17,218 @@ import '@phosphor-icons/web/regular/style.css';
           Dzudzogbe Prince Armand Koumi
         </h1>
         <p class="text-xl text-neutral-300 mb-4">
-          Agricultural Data Scientist | Agro-économiste | Drone pilot (A1/A2/A3)
+          Data Scientist en agriculture, agro-alimentaire et environnement | Drone pilot certifié (A1/A2/A3)
         </p>
-      </div>
-      <div class="flex justify-center items-center space-x-4 text-neutral-500 dark:text-neutral-400 mb-8">
-        <a href="mailto:koumiprince@gmail.com" class="hover:text-neutral-900 dark:hover:text-white transition flex items-center">
-          <i class="ph ph-envelope mr-2"></i> koumiprince@gmail.com
-        </a>
-        <span>•</span>
-        <a href="tel:+33602892354" class="hover:text-neutral-900 dark:hover:text-white transition flex items-center">
-          <i class="ph ph-phone mr-2"></i> +33 6 02 89 23 54
-        </a>
-        <span>•</span>
-        <a href="https://www.linkedin.com/in/dzudzogbe-prince-armand-koumi" target="_blank" class="hover:text-neutral-900 dark:hover:text-white transition flex items-center">
-          <i class="ph ph-linkedin-logo mr-2"></i> LinkedIn
-        </a>
-        <span>•</span>
-        <a href="https://www.tiktok.com/@dzudzogbeprince" target="_blank" class="hover:text-neutral-900 dark:hover:text-white transition flex items-center">
-          <i class="ph ph-tiktok-logo mr-2"></i> TikTok
-        </a>
-        <span>•</span>
-        <a href="https://www.youtube.com/@dzudzogbeprince" target="_blank" class="hover:text-neutral-900 dark:hover:text-white transition flex items-center">
-          <i class="ph ph-youtube-logo mr-2"></i> YouTube
-        </a>
       </div>
       
       <div class="flex justify-center space-x-4">
         <a href="/projets" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition flex items-center">
            Mes Projets
         </a>
-        <a href="/certifications" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition flex items-center">
-          Certifications
+        <a href="/experience" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition flex items-center">
+          Mon Expérience
         </a>
+        <!-- CV Dropdown Menu -->
+        <div class="relative group">
+          <button class="bg-neutral-600 hover:bg-neutral-700 text-white px-6 py-3 rounded-lg transition flex items-center">
+            <i class="ph ph-download mr-2"></i>
+            Télécharger CV
+            <i class="ph ph-caret-down ml-2 text-sm"></i>
+          </button>
+          
+          <!-- Dropdown Menu -->
+          <div class="absolute left-0 top-full mt-2 w-56 bg-white dark:bg-neutral-800 rounded-lg shadow-xl border border-neutral-200 dark:border-neutral-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+            <div class="py-2">
+              <a href="https://cvdesignr.com/p/683580e517ed8" target="_blank" 
+                 class="flex items-center px-4 py-3 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-green-50 dark:hover:bg-green-900 hover:text-green-700 dark:hover:text-green-300 transition-colors">
+                <i class="ph ph-flag mr-3 text-blue-500"></i>
+                <div>
+                  <div class="font-medium">CV en Français</div>
+                  <div class="text-xs text-neutral-500 dark:text-neutral-400">Version française</div>
+                </div>
+              </a>
+              <a href="https://cvdesignr.com/p/68f20c7b50c54" target="_blank" 
+                 class="flex items-center px-4 py-3 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-green-50 dark:hover:bg-green-900 hover:text-green-700 dark:hover:text-green-300 transition-colors">
+                <i class="ph ph-flag mr-3 text-red-500"></i>
+                <div>
+                  <div class="font-medium">CV in English</div>
+                  <div class="text-xs text-neutral-500 dark:text-neutral-400">English version</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    {/* About Section */}
-    <section>
-      <h2 class="text-3xl font-semibold mb-6 text-neutral-100 border-b border-neutral-800 pb-2">À propos</h2>
-      <p class="text-neutral-300 leading-relaxed">
-        Passionné par l'agriculture de précision et l'analyse de données environnementales, je suis actuellement en dernière année de Master en Gestion des Données Agricoles et Alimentaires à UniLaSalle Rouen. 
-        J'allie expertise en machine learning, géospatiale et IoT pour concevoir des solutions durables et innovantes au service de l'agro-écosystème. 
-        Curieux, autonome et doté d'un sens aigu de la rigueur, j'aime relever les défis multi-disciplinaires et travailler en équipe pour transformer les données en actions concrètes.
-      </p>
+
+    {/* About Section - Simplified */}
+    <section class="text-center mb-16">
+      <div class="bg-gradient-to-r from-green-500/10 to-blue-600/10 rounded-2xl p-8 mb-12">
+        <p class="text-xl text-neutral-300 leading-relaxed max-w-3xl mx-auto">
+          Spécialisé en agriculture, environnement et agroalimentaire, je mobilise ma triple compétence en agronomie, statistique et informatique pour développer des outils d'aide à la décision. 
+          Mon travail s'appuie sur l'IA, la télédétection et l'analyse de données pour soutenir l'agriculture de précision.
+        </p>
+      </div>
     </section>
 
-    {/* Specialization Domains */}
-    <section>
-      <h2 class="text-3xl font-semibold mb-6 text-neutral-100 border-b border-neutral-800 pb-2">Domaines de spécialisation</h2>
-      <div class="grid md:grid-cols-2 gap-4">
+    {/* Publications Section */}
+    <section class="text-center mb-16">
+      <h2 class="text-3xl font-semibold mb-8 text-neutral-100">Publications Récentes</h2>
+      <div class="grid md:grid-cols-1 gap-6 max-w-4xl mx-auto">
         {[
-          "Data Science & Machine Learning : Modélisation prédictive, sélection et tuning de modèles",
-          "Analyse géospatiale & SIG : QGIS, Agisoft Metashape, GeoPandas, imagerie satellite",
-          "Agriculture de précision & IoT : Déploiement de capteurs, drones, réseaux de suivi des cultures",
-          "Big Data & Data Engineering : Architectures data lakes, pipelines ETL",
-          "Agro-économie & Développement rural : Études socio-économiques, stratégies d'adaptation"
-        ].map(domain => (
-          <div class="bg-neutral-900 rounded-lg p-4 text-neutral-300 hover:bg-neutral-800 transition-colors">
-            {domain}
+          {
+            title: "Perceptions and adaptation strategies of cereal farmers (rice and maize) to the impacts of natural hazards in the Maritime Region of Togo",
+            subtitle: "Une étude de cas sur les poches de sécheresse et les inondations",
+            link: "https://www.researchgate.net/publication/396194173_Perceptions_and_adaptation_strategies_of_cereal_farmers_rice_and_maize_to_the_impacts_of_natural_hazards_in_the_Maritime_Region_of_Togo_a_case_study_of_drought_pockets_and_floods",
+            type: "Recherche"
+          },
+          {
+            title: "Analyse des effets de l'agriculture conventionnelle et de l'agriculture de conservation sur la santé des sols en climat méditerranéen",
+            subtitle: "Une approche combinant modélisation mécaniste et Machine Learning",
+            link: "https://www.researchgate.net/publication/396155201_Analyse_des_effets_de_l'agriculture_conventionnelle_et_de_l'agriculture_de_conservation_sur_la_sante_des_sols_en_climat_mediterraneen_une_approche_combinant_modelisation_mecaniste_et_Machine_Learning_",
+            type: "Mémoire"
+          }
+        ].map((pub, index) => (
+          <div class="publication-container" data-delay={index * 200}>
+            <div class="bg-neutral-100 dark:bg-neutral-900 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-all duration-300 border-l-4 border-green-500">
+              <div class="flex items-start justify-between mb-4">
+                <div class="flex-1">
+                  <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 leading-relaxed">
+                    {pub.title}
+                  </h3>
+                  <p class="text-neutral-600 dark:text-neutral-300 mb-3">{pub.subtitle}</p>
+                </div>
+                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 ml-4">
+                  {pub.type}
+                </span>
+              </div>
+              <a href={pub.link} target="_blank" class="inline-flex items-center text-green-600 hover:text-green-700 font-medium">
+                <i class="ph ph-external-link mr-2"></i>
+                Lire sur ResearchGate
+              </a>
+            </div>
           </div>
         ))}
       </div>
     </section>
 
-    {/* Technical Skills */}
-    <section>
-      <h2 class="text-3xl font-semibold mb-6 text-neutral-100 border-b border-neutral-800 pb-2">Compétences techniques</h2>
-      <div class="grid md:grid-cols-3 gap-4">
-        <div>
-          <h3 class="text-xl font-semibold text-neutral-200 mb-3">Langages & Outils</h3>
-          <ul class="space-y-2 text-neutral-300">
-            {['Python', 'R', 'SQL', 'VBA', 'Excel', 'Power BI', 'Git', 'Docker'].map(skill => (
-              <li>{skill}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold text-neutral-200 mb-3">Plateformes</h3>
-          <ul class="space-y-2 text-neutral-300">
-            {['scikit-learn', 'TensorFlow', 'Dask', 'QGIS', 'AWS', 'Azure'].map(platform => (
-              <li>{platform}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold text-neutral-200 mb-3">Méthodes</h3>
-          <ul class="space-y-2 text-neutral-300">
-            {['Feature engineering', 'Cross-validation', 'SIG', 'MLOps', 'Agriculture de précision'].map(method => (
-              <li>{method}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    {/* Key Projects */}
-    <section>
-      <h2 class="text-3xl font-semibold mb-6 text-neutral-100 border-b border-neutral-800 pb-2">Projets & expériences clés</h2>
-      {[
-        {
-          title: "Ingénieur Machine Learning",
-          company: "ENS-Paris PSL",
-          period: "avril 2025 – oct. 2025",
-          description: [
-            "Collecte et agrégation de données « open source »",
-            "Sélection et validation de modèles ML pour évaluer l'impact des pratiques culturales",
-            "Développement d'algorithmes prédictifs pour anticiper les tendances agronomiques"
-          ]
-        },
-        {
-          title: "Responsable agrégation & traitement de données",
-          company: "Global Center for Risk and Innovation (GCRI)",
-          period: "déc. 2024 – mars 2025",
-          description: [
-            "Supervision de la collecte et standardisation de données environnementales",
-            "Mise en place d'une architecture data lake et protocoles de métadonnées"
-          ]
-        }
-      ].map(project => (
-        <div class="bg-neutral-900 rounded-lg p-6 mb-4">
-          <h3 class="text-xl font-semibold text-neutral-200 mb-2">{project.title}</h3>
-          <div class="flex justify-between text-neutral-400 mb-3">
-            <span>{project.company}</span>
-            <span>{project.period}</span>
+    {/* Quick Stats */}
+    <section class="text-center mt-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {[
+          { number: "3+", label: "Années d'expérience" },
+          { number: "35+", label: "Compétences maîtrisées" },
+          { number: "15+", label: "Projets réalisés" },
+          { number: "4", label: "Pays d'impact" }
+        ].map((stat, index) => (
+          <div class="stat-container" data-delay={index * 150}>
+            <div class="bg-neutral-900 rounded-xl p-6 hover:bg-neutral-800 transition-all duration-300 hover:scale-105">
+              <div class="text-3xl font-bold text-green-400 mb-2">{stat.number}</div>
+              <div class="text-sm text-neutral-400">{stat.label}</div>
+            </div>
           </div>
-          <ul class="list-disc list-inside text-neutral-300 space-y-1">
-            {project.description.map(point => (
-              <li>{point}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
 
   </main>
 </MainLayout>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    // Animation observer for skill icons
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-delay') || 0;
+          setTimeout(() => {
+            entry.target.classList.add('animate-fade-in-up');
+          }, delay);
+        }
+      });
+    }, { threshold: 0.1 });
+
+
+    // Observe stat containers
+    const statContainers = document.querySelectorAll('.stat-container');
+    statContainers.forEach(stat => {
+      stat.classList.add('opacity-0', 'transition-all', 'duration-700');
+      observer.observe(stat);
+    });
+
+    // Observe publication containers
+    const publicationContainers = document.querySelectorAll('.publication-container');
+    publicationContainers.forEach(pub => {
+      pub.classList.add('opacity-0', 'transition-all', 'duration-700');
+      observer.observe(pub);
+    });
+
+    // Floating animation for profile image
+    const profileImg = document.querySelector('img[alt="Dzudzogbe Prince Armand Koumi"]');
+    if (profileImg) {
+      profileImg.classList.add('animate-float');
+    }
+
+    // Pulse animation for buttons
+    const buttons = document.querySelectorAll('a[class*="bg-"]');
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', () => {
+        button.classList.add('animate-pulse-once');
+      });
+    });
+  });
+</script>
+
+<style>
+  @keyframes fadeInUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(30px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulseOnce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-once {
+    animation: pulseOnce 0.3s ease-in-out;
+  }
+
+  /* Hover effects */
+
+  .publication-container:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+  }
+
+  /* Gradient text animation */
+  .text-transparent {
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+</style>
