@@ -361,7 +361,7 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
         
         <div class="stat-card bg-gradient-to-br from-yellow-500 to-purple-600 rounded-lg p-6 text-center text-white">
           <div class="text-3xl font-bold mb-2">Agriculture</div>
-          <div class="text-sm opacity-90">Biodiversité & Aires Protégées</div>
+          <div class="text-sm opacity-90">Économie agricoles, Gestion de projet, Économétrie & Droit agricole </div>
         </div>
 
       </div>
@@ -463,6 +463,10 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
               <i class="ph ph-arrows-clockwise mr-1"></i>
               Reset
             </button>
+            <button onclick="imageFitToPage()" class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors flex items-center">
+              <i class="ph ph-arrows-in mr-1"></i>
+              Ajuster
+            </button>
           </div>
           <div class="text-xs text-neutral-500 dark:text-neutral-400">
             <i class="ph ph-info mr-1"></i>
@@ -471,16 +475,18 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
         </div>
         
         <!-- Image Container -->
-        <div class="flex-1 relative overflow-auto bg-neutral-50 dark:bg-neutral-900 flex items-center justify-center">
-          <img 
-            id="imageFrame"
-            src="${imageUrl}" 
-            alt="${title}" 
-            class="max-w-none transition-all duration-300 cursor-zoom-in"
-            style="width: ${imageZoom}%; height: auto;"
-            oncontextmenu="return false;"
-            onselectstart="return false;"
-            ondragstart="return false;">
+        <div class="flex-1 relative overflow-auto bg-neutral-50 dark:bg-neutral-900 flex items-center justify-center p-4">
+          <div class="max-w-full max-h-full flex items-center justify-center">
+            <img 
+              id="imageFrame"
+              src="${imageUrl}" 
+              alt="${title}" 
+              class="max-w-none transition-all duration-300 cursor-zoom-in shadow-lg rounded-lg border border-neutral-200 dark:border-neutral-700"
+              style="width: ${imageZoom}%; height: auto; max-width: 100%; max-height: 100%;"
+              oncontextmenu="return false;"
+              onselectstart="return false;"
+              ondragstart="return false;">
+          </div>
           
           <!-- Overlay to prevent interaction -->
           <div class="absolute inset-0 bg-transparent" 
@@ -518,6 +524,22 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
   function imageResetZoom() {
     imageZoom = 100;
     updateImageZoom();
+  }
+
+  function imageFitToPage() {
+    if (imageElement) {
+      // Auto-fit the image to the container
+      imageElement.style.width = 'auto';
+      imageElement.style.maxWidth = '100%';
+      imageElement.style.height = 'auto';
+      imageElement.style.maxHeight = '100%';
+      
+      // Update display to show "Ajusté"
+      const zoomDisplay = document.querySelector('.text-sm.font-medium.text-neutral-700');
+      if (zoomDisplay) {
+        zoomDisplay.textContent = 'Ajusté';
+      }
+    }
   }
 
   function updateImageZoom() {
@@ -565,6 +587,10 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
               <i class="ph ph-arrows-clockwise mr-1"></i>
               Reset
             </button>
+            <button onclick="fitToPage()" class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors flex items-center">
+              <i class="ph ph-arrows-in mr-1"></i>
+              Ajuster
+            </button>
           </div>
           <div class="text-xs text-neutral-500 dark:text-neutral-400">
             <i class="ph ph-info mr-1"></i>
@@ -573,17 +599,19 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
         </div>
         
         <!-- PDF Container -->
-        <div class="flex-1 relative overflow-auto">
-          <iframe 
-            id="pdfFrame"
-            src="${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&scrollbar=0&view=FitH"
-            class="border-0 transition-all duration-300"
-            style="pointer-events: none; width: ${currentZoom}%; height: ${currentZoom}%;"
-            oncontextmenu="return false;"
-            onselectstart="return false;"
-            ondragstart="return false;"
-            onkeydown="return false;">
-          </iframe>
+        <div class="flex-1 relative overflow-auto bg-neutral-50 dark:bg-neutral-900">
+          <div class="min-h-full flex items-center justify-center p-4">
+            <iframe 
+              id="pdfFrame"
+              src="${pdfUrl}#toolbar=0&navpanes=0&scrollbar=1&statusbar=0&messages=0&view=FitV&zoom=${currentZoom}"
+              class="border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-lg transition-all duration-300"
+              style="pointer-events: none; min-width: 800px; min-height: 600px;"
+              oncontextmenu="return false;"
+              onselectstart="return false;"
+              ondragstart="return false;"
+              onkeydown="return false;">
+            </iframe>
+          </div>
           
           <!-- Overlay to prevent interaction -->
           <div class="absolute inset-0 bg-transparent" 
@@ -631,10 +659,25 @@ const totalPages = Math.ceil(certifications.length / certificationsPerPage);
     updateZoom();
   }
 
+  function fitToPage() {
+    if (pdfIframe) {
+      // Use FitV to fit vertically in the container
+      const currentSrc = pdfIframe.src.split('#')[0];
+      pdfIframe.src = `${currentSrc}#toolbar=0&navpanes=0&scrollbar=1&statusbar=0&messages=0&view=FitV`;
+      
+      // Update display to show "Ajusté"
+      const zoomDisplay = document.querySelector('.text-sm.font-medium.text-neutral-700');
+      if (zoomDisplay) {
+        zoomDisplay.textContent = 'Ajusté';
+      }
+    }
+  }
+
   function updateZoom() {
     if (pdfIframe) {
-      pdfIframe.style.width = `${currentZoom}%`;
-      pdfIframe.style.height = `${currentZoom}%`;
+      // Update the PDF URL with new zoom parameter
+      const currentSrc = pdfIframe.src.split('#')[0];
+      pdfIframe.src = `${currentSrc}#toolbar=0&navpanes=0&scrollbar=1&statusbar=0&messages=0&view=FitV&zoom=${currentZoom}`;
       
       // Update zoom percentage display
       const zoomDisplay = document.querySelector('.text-sm.font-medium.text-neutral-700');
