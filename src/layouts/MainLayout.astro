@@ -121,100 +121,188 @@ const { title, description = 'Portfolio de Dzudzogbe Prince Armand Koumi' } = As
     
     <!-- Custom CSS for Google Translate Widget -->
     <style>
-      /* Hide Google Translate Banner */
+      /* Completely hide Google Translate banner and branding */
       .goog-te-banner-frame.skiptranslate {
         display: none !important;
       }
       
-      /* Style the Google Translate dropdown */
-      .goog-te-gadget {
-        font-family: inherit !important;
+      body {
+        top: 0 !important;
       }
       
-      .goog-te-gadget-simple {
-        background-color: transparent !important;
-        border: none !important;
-        font-size: 14px !important;
-        padding: 8px 12px !important;
-        border-radius: 6px !important;
-        transition: all 0.3s ease !important;
-        width: 100% !important;
-        text-align: left !important;
-      }
-      
-      .goog-te-gadget-simple:hover {
-        background-color: #f3f4f6 !important;
-      }
-      
-      .dark .goog-te-gadget-simple:hover {
-        background-color: #374151 !important;
-      }
-      
-      .goog-te-gadget-simple .goog-te-menu-value {
-        color: inherit !important;
-        font-family: inherit !important;
-      }
-      
+      /* Hide Google branding completely */
       .goog-te-gadget-simple .goog-te-menu-value span:first-child {
         display: none !important;
       }
       
+      /* Hide the Google logo and text */
+      .goog-te-gadget-simple {
+        background: none !important;
+        border: none !important;
+        font-size: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+      }
+      
+      /* Custom language selector styling */
+      .goog-te-gadget-simple .goog-te-menu-value {
+        display: flex !important;
+        align-items: center !important;
+        padding: 8px 12px !important;
+        background-color: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 8px !important;
+        color: #475569 !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      
+      .dark .goog-te-gadget-simple .goog-te-menu-value {
+        background-color: #1e293b !important;
+        border-color: #334155 !important;
+        color: #cbd5e1 !important;
+      }
+      
+      .goog-te-gadget-simple .goog-te-menu-value:hover {
+        background-color: #e2e8f0 !important;
+        border-color: #cbd5e1 !important;
+      }
+      
+      .dark .goog-te-gadget-simple .goog-te-menu-value:hover {
+        background-color: #334155 !important;
+        border-color: #475569 !important;
+      }
+      
+      /* Custom flag and language code display */
       .goog-te-gadget-simple .goog-te-menu-value:before {
-        content: "🌍 Choisir une langue";
-        color: #6b7280;
-        font-size: 12px;
+        content: "🇫🇷" !important;
+        margin-right: 8px !important;
+        font-size: 16px !important;
       }
       
-      .dark .goog-te-gadget-simple .goog-te-menu-value:before {
-        color: #9ca3af;
+      .goog-te-gadget-simple .goog-te-menu-value:after {
+        content: "Français" !important;
+        flex: 1 !important;
+        text-align: left !important;
       }
       
-      /* Style the language dropdown */
+      /* Add dropdown arrow */
+      .goog-te-gadget-simple .goog-te-menu-value span:last-child:after {
+        content: "▼" !important;
+        margin-left: auto !important;
+        font-size: 10px !important;
+        color: #64748b !important;
+      }
+      
+      /* Style the dropdown menu */
       .goog-te-menu {
         background-color: white !important;
-        border: 1px solid #e5e7eb !important;
+        border: 1px solid #e2e8f0 !important;
         border-radius: 8px !important;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
         max-height: 300px !important;
         overflow-y: auto !important;
+        z-index: 1000 !important;
+        margin-top: 4px !important;
       }
       
       .dark .goog-te-menu {
-        background-color: #1f2937 !important;
-        border-color: #374151 !important;
+        background-color: #1e293b !important;
+        border-color: #334155 !important;
       }
       
+      /* Style dropdown items */
       .goog-te-menu-item {
-        padding: 8px 12px !important;
-        border-bottom: 1px solid #f3f4f6 !important;
+        padding: 10px 12px !important;
+        border-bottom: 1px solid #f1f5f9 !important;
         transition: background-color 0.2s ease !important;
+        display: flex !important;
+        align-items: center !important;
       }
       
       .dark .goog-te-menu-item {
-        border-bottom-color: #374151 !important;
+        border-bottom-color: #334155 !important;
       }
       
       .goog-te-menu-item:hover {
-        background-color: #f9fafb !important;
+        background-color: #f8fafc !important;
       }
       
       .dark .goog-te-menu-item:hover {
-        background-color: #374151 !important;
-      }
-      
-      .goog-te-menu-item .goog-te-menu-item-text {
-        color: #374151 !important;
-        font-family: inherit !important;
-        font-size: 14px !important;
-      }
-      
-      .dark .goog-te-menu-item .goog-te-menu-item-text {
-        color: #d1d5db !important;
+        background-color: #334155 !important;
       }
       
       /* Hide the "Original" option */
       .goog-te-menu-item:first-child {
         display: none !important;
+      }
+      
+      /* Style language text in dropdown */
+      .goog-te-menu-item .goog-te-menu-item-text {
+        color: #475569 !important;
+        font-family: inherit !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+      }
+      
+      .dark .goog-te-menu-item .goog-te-menu-item-text {
+        color: #cbd5e1 !important;
+      }
+      
+      /* Add flags to dropdown items */
+      .goog-te-menu-item[value="en"] .goog-te-menu-item-text:before {
+        content: "🇺🇸 " !important;
+        margin-right: 8px !important;
+      }
+      
+      .goog-te-menu-item[value="es"] .goog-te-menu-item-text:before {
+        content: "🇪🇸 " !important;
+        margin-right: 8px !important;
+      }
+      
+      .goog-te-menu-item[value="de"] .goog-te-menu-item-text:before {
+        content: "🇩🇪 " !important;
+        margin-right: 8px !important;
+      }
+      
+      .goog-te-menu-item[value="it"] .goog-te-menu-item-text:before {
+        content: "🇮🇹 " !important;
+        margin-right: 8px !important;
+      }
+      
+      .goog-te-menu-item[value="pt"] .goog-te-menu-item-text:before {
+        content: "🇵🇹 " !important;
+        margin-right: 8px !important;
+      }
+      
+      .goog-te-menu-item[value="ru"] .goog-te-menu-item-text:before {
+        content: "🇷🇺 " !important;
+        margin-right: 8px !important;
+      }
+      
+      .goog-te-menu-item[value="zh"] .goog-te-menu-item-text:before {
+        content: "🇨🇳 " !important;
+        margin-right: 8px !important;
+      }
+      
+      .goog-te-menu-item[value="ja"] .goog-te-menu-item-text:before {
+        content: "🇯🇵 " !important;
+        margin-right: 8px !important;
+      }
+      
+      .goog-te-menu-item[value="ko"] .goog-te-menu-item-text:before {
+        content: "🇰🇷 " !important;
+        margin-right: 8px !important;
+      }
+      
+      .goog-te-menu-item[value="ar"] .goog-te-menu-item-text:before {
+        content: "🇸🇦 " !important;
+        margin-right: 8px !important;
       }
     </style>
   </head>
@@ -249,7 +337,7 @@ const { title, description = 'Portfolio de Dzudzogbe Prince Armand Koumi' } = As
                   <div class="text-xs text-neutral-500 dark:text-neutral-400">Version française</div>
                 </div>
               </a>
-              <a href="https://cvdesignr.com/p/683580e517ed8-en" target="_blank" 
+              <a href="https://cvdesignr.com/p/68f20c7b50c54" target="_blank" 
                  class="flex items-center px-4 py-3 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-green-50 dark:hover:bg-green-900 hover:text-green-700 dark:hover:text-green-300 transition-colors">
                 <i class="ph ph-flag mr-3 text-red-500"></i>
                 <div>
@@ -363,6 +451,45 @@ const { title, description = 'Portfolio de Dzudzogbe Prince Armand Koumi' } = As
             }
           });
         }
+
+        // Hide Google Translate banner completely
+        const hideGoogleBanner = () => {
+          // Remove Google Translate banner
+          const banner = document.querySelector('.goog-te-banner-frame');
+          if (banner) {
+            banner.style.display = 'none';
+            banner.remove();
+          }
+          
+          // Remove top margin/padding added by Google Translate
+          document.body.style.top = '0';
+          document.documentElement.style.top = '0';
+          
+          // Hide Google branding
+          const googleBranding = document.querySelector('.goog-te-gadget-simple .goog-te-menu-value span:first-child');
+          if (googleBranding) {
+            googleBranding.style.display = 'none';
+          }
+          
+          // Remove Google logo
+          const googleLogo = document.querySelector('.goog-te-gadget-simple img');
+          if (googleLogo) {
+            googleLogo.style.display = 'none';
+          }
+        };
+
+        // Run immediately and on page changes
+        hideGoogleBanner();
+        
+        // Hide banner when Google Translate loads
+        const observer = new MutationObserver(() => {
+          hideGoogleBanner();
+        });
+        
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
       });
     </script>
   </body>
