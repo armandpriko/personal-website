@@ -118,11 +118,36 @@ const { title, description = 'Portfolio de Dzudzogbe Prince Armand Koumi' } = As
       
       <!-- Top Right Controls -->
       <div class="fixed top-2 right-2 sm:top-4 sm:right-4 z-50 flex gap-2 sm:gap-3">
-        <a href="https://cvdesignr.com/p/683580e517ed8" target="_blank" 
-           class="bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-4 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl flex items-center">
-          <i class="ph ph-download mr-1 sm:mr-2"></i>
-          <span class="hidden sm:inline">CV</span>
-        </a>
+        <!-- CV Dropdown Menu -->
+        <div class="relative group">
+          <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-4 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl flex items-center">
+            <i class="ph ph-download mr-1 sm:mr-2"></i>
+            <span class="hidden sm:inline">CV</span>
+            <i class="ph ph-caret-down ml-1 text-xs"></i>
+          </button>
+          
+          <!-- Dropdown Menu -->
+          <div class="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-neutral-800 rounded-lg shadow-xl border border-neutral-200 dark:border-neutral-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+            <div class="py-2">
+              <a href="https://cvdesignr.com/p/683580e517ed8" target="_blank" 
+                 class="flex items-center px-4 py-3 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-green-50 dark:hover:bg-green-900 hover:text-green-700 dark:hover:text-green-300 transition-colors">
+                <i class="ph ph-flag mr-3 text-blue-500"></i>
+                <div>
+                  <div class="font-medium">CV en Français</div>
+                  <div class="text-xs text-neutral-500 dark:text-neutral-400">Version française</div>
+                </div>
+              </a>
+              <a href="https://cvdesignr.com/p/683580e517ed8-en" target="_blank" 
+                 class="flex items-center px-4 py-3 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-green-50 dark:hover:bg-green-900 hover:text-green-700 dark:hover:text-green-300 transition-colors">
+                <i class="ph ph-flag mr-3 text-red-500"></i>
+                <div>
+                  <div class="font-medium">CV in English</div>
+                  <div class="text-xs text-neutral-500 dark:text-neutral-400">English version</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
         <button id="theme-toggle" class="bg-neutral-200 dark:bg-neutral-800 p-2 sm:p-3 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors shadow-lg hover:shadow-xl">
           <i id="theme-icon" class="ph ph-moon-stars text-lg sm:text-xl text-neutral-700 dark:text-neutral-300"></i>
         </button>
