@@ -105,6 +105,118 @@ const { title, description = 'Portfolio de Dzudzogbe Prince Armand Koumi' } = As
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.0.3/src/regular/style.css" rel="stylesheet">
+    
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'fr',
+          includedLanguages: 'en,es,de,it,pt,ru,zh,ja,ko,ar',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <!-- Custom CSS for Google Translate Widget -->
+    <style>
+      /* Hide Google Translate Banner */
+      .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+      }
+      
+      /* Style the Google Translate dropdown */
+      .goog-te-gadget {
+        font-family: inherit !important;
+      }
+      
+      .goog-te-gadget-simple {
+        background-color: transparent !important;
+        border: none !important;
+        font-size: 14px !important;
+        padding: 8px 12px !important;
+        border-radius: 6px !important;
+        transition: all 0.3s ease !important;
+        width: 100% !important;
+        text-align: left !important;
+      }
+      
+      .goog-te-gadget-simple:hover {
+        background-color: #f3f4f6 !important;
+      }
+      
+      .dark .goog-te-gadget-simple:hover {
+        background-color: #374151 !important;
+      }
+      
+      .goog-te-gadget-simple .goog-te-menu-value {
+        color: inherit !important;
+        font-family: inherit !important;
+      }
+      
+      .goog-te-gadget-simple .goog-te-menu-value span:first-child {
+        display: none !important;
+      }
+      
+      .goog-te-gadget-simple .goog-te-menu-value:before {
+        content: "🌍 Choisir une langue";
+        color: #6b7280;
+        font-size: 12px;
+      }
+      
+      .dark .goog-te-gadget-simple .goog-te-menu-value:before {
+        color: #9ca3af;
+      }
+      
+      /* Style the language dropdown */
+      .goog-te-menu {
+        background-color: white !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 8px !important;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+        max-height: 300px !important;
+        overflow-y: auto !important;
+      }
+      
+      .dark .goog-te-menu {
+        background-color: #1f2937 !important;
+        border-color: #374151 !important;
+      }
+      
+      .goog-te-menu-item {
+        padding: 8px 12px !important;
+        border-bottom: 1px solid #f3f4f6 !important;
+        transition: background-color 0.2s ease !important;
+      }
+      
+      .dark .goog-te-menu-item {
+        border-bottom-color: #374151 !important;
+      }
+      
+      .goog-te-menu-item:hover {
+        background-color: #f9fafb !important;
+      }
+      
+      .dark .goog-te-menu-item:hover {
+        background-color: #374151 !important;
+      }
+      
+      .goog-te-menu-item .goog-te-menu-item-text {
+        color: #374151 !important;
+        font-family: inherit !important;
+        font-size: 14px !important;
+      }
+      
+      .dark .goog-te-menu-item .goog-te-menu-item-text {
+        color: #d1d5db !important;
+      }
+      
+      /* Hide the "Original" option */
+      .goog-te-menu-item:first-child {
+        display: none !important;
+      }
+    </style>
   </head>
   <body class="bg-neutral-50 text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50 font-sans antialiased selection:bg-green-500 selection:text-white transition-colors duration-300">
     <div id="app" class="min-h-screen">
@@ -148,6 +260,21 @@ const { title, description = 'Portfolio de Dzudzogbe Prince Armand Koumi' } = As
             </div>
           </div>
         </div>
+        <!-- Translation Button -->
+        <div class="relative group">
+          <button id="translate-btn" class="bg-blue-600 hover:bg-blue-700 text-white p-2 sm:p-3 rounded-full transition-colors shadow-lg hover:shadow-xl">
+            <i class="ph ph-translate text-lg sm:text-xl"></i>
+          </button>
+          
+          <!-- Translate Dropdown -->
+          <div id="translate-dropdown" class="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-neutral-800 rounded-lg shadow-xl border border-neutral-200 dark:border-neutral-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+            <div class="p-2">
+              <div class="text-xs text-neutral-500 dark:text-neutral-400 mb-2 px-2">Traduire cette page</div>
+              <div id="google_translate_element"></div>
+            </div>
+          </div>
+        </div>
+        
         <button id="theme-toggle" class="bg-neutral-200 dark:bg-neutral-800 p-2 sm:p-3 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors shadow-lg hover:shadow-xl">
           <i id="theme-icon" class="ph ph-moon-stars text-lg sm:text-xl text-neutral-700 dark:text-neutral-300"></i>
         </button>
@@ -212,6 +339,28 @@ const { title, description = 'Portfolio de Dzudzogbe Prince Armand Koumi' } = As
           newToggle.addEventListener('click', () => {
             const isDark = document.documentElement.classList.contains('dark');
             setTheme(isDark ? 'light' : 'dark');
+          });
+        }
+
+        // Translation functionality
+        const translateBtn = document.getElementById('translate-btn');
+        const translateDropdown = document.getElementById('translate-dropdown');
+        
+        if (translateBtn && translateDropdown) {
+          translateBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            translateDropdown.classList.toggle('opacity-0');
+            translateDropdown.classList.toggle('invisible');
+            translateDropdown.classList.toggle('opacity-100');
+            translateDropdown.classList.toggle('visible');
+          });
+
+          // Close dropdown when clicking outside
+          document.addEventListener('click', (e) => {
+            if (!translateBtn.contains(e.target) && !translateDropdown.contains(e.target)) {
+              translateDropdown.classList.add('opacity-0', 'invisible');
+              translateDropdown.classList.remove('opacity-100', 'visible');
+            }
           });
         }
       });
